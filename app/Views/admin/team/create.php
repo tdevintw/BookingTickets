@@ -18,7 +18,7 @@
 <body class="h-full">
 
     <?php
-    require "app/Views/includes/admin/navbar.php";
+    require "app/Views/includes/navbar.php";
     ?>
 
     <div class="w-full flex flex-row">
@@ -30,7 +30,7 @@
         <div class="w-5/6 mx-auto bg-white rounded-md shadow-md flex flex-col items-center">
             <h1 class="text-2xl font-semibold mb-6">Create Team</h1>
 
-            <form class="w-2/3 p-1" action="/process-team" method="post">
+            <form class="w-2/3 p-1" action="<?= $_ENV['APP_URL'] . "/admin/team/store" ?>" method="post">
                 <!-- Team Name -->
                 <div class="mb-4">
                     <label for="name" class="block text-gray-600 text-sm font-medium mb-2">Team Name</label>

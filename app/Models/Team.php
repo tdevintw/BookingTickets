@@ -18,4 +18,9 @@ class Team extends Model{
         new Model();
         return Model::selectRecords("teams");
     }
+
+    public static function delete($id){
+        new Model();
+        return Model::deleteRecord('teams', $id);
+    }
 }

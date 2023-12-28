@@ -16,7 +16,7 @@
 <body class="h-full">
 
     <?php
-    require "app/Views/includes/admin/navbar.php";
+    require "app/Views/includes/navbar.php";
     ?>
 
     <div class="w-full flex flex-row">
@@ -88,7 +88,7 @@
                                 </td>
 
                                 <td class="text-right border-r border-white">
-                                    <form class="text-center" action="<?= $_ENV['APP_URL'] . "/admin/team/delete/:1" ?>" method="POST">
+                                    <form class="text-center" action="<?= $_ENV['APP_URL'] . "/admin/team/delete/" . $team['id'] ?>" method="POST">
                                         
                                         <button class="hover:bg-red-500 hover:text-white text-red-500 border border-red-500 rounded-md p-2" onclick="return confirmDelete()">
                                             Delete

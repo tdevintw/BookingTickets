@@ -17,7 +17,7 @@
 <body class="h-full">
 
     <?php
-    require "app/Views/includes/admin/navbar.php";
+    require "app/Views/includes/navbar.php";
     ?>
 
     <div class="w-full flex flex-row h-full">

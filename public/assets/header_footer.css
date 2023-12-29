@@ -1,0 +1,117 @@
+@media (max-width: 992px) {
+    .navbar_box {
+        display: flex;
+        flex-direction: column;
+
+    }
+}
+
+a.nav-link {
+    color: white;
+}
+
+.tags {
+    text-align: center;
+}
+
+.hero-header {
+
+    color: #FAFAFA;
+    font-family: Roboto;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 200px;
+    text-shadow: #FC0 1px 0 10px;
+}
+
+.main-hero {
+    display: flex;
+    justify-content: center;
+    background-image: url(images/hero_image.png);
+    background-repeat: no-repeat;
+    background-color: #cccccc;
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.search-section {
+    border: 4px solid black;
+    margin-top: 20px;
+    border-radius: 10px;
+    width: 90%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+footer .top-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: #03740E;
+    height: 16.4227rem;
+}
+
+.bootom-footer {
+    width: 100% width: 37.5rem;
+    height: 4.9261rem;
+    flex-shrink: 0;
+    background: #01650B;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bootom-footer img {
+    height: 1.3rem;
+}
+
+.bootom-footer span {
+    color: white;
+    font-size: 1rem;
+}
+
+.footer-links {
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+}
+
+.navbar {
+    background-color: green;
+}
+
+.navbar-brand img {
+    width: 1.5rem;
+}
+
+.navbar span {
+    color: #FFF;
+    font-family: Jockey One;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+footer span {
+    color: #FFF;
+    font-family: Jockey One;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+}

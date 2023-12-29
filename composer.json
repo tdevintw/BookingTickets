@@ -1,5 +1,5 @@
 {
-    "name": "youcode/mvc_stadium-stream",
+    "name": "yasser/bookingtickets",
     "autoload": {
         "psr-4": {
             "app\\": "app/",
@@ -8,8 +8,8 @@
     },
     "authors": [
         {
-            "name": "abdelghaniAit",
-            "email": "aaittamghart8@gmail.com"
+            "name": "yasseraitelghari",
+            "email": "aitelghariyasser@gmail.com"
         }
     ],
     "require": {

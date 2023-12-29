@@ -15,12 +15,10 @@ class Team extends Model{
     }
 
     public static function select(){
-        new Model();
         return Model::selectRecords("teams");
     }
 
     public static function delete($id){
-        new Model();
         return Model::deleteRecord('teams', $id);
     }
 }

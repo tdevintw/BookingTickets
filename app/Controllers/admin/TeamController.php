@@ -28,7 +28,8 @@ class TeamController extends Controller
 
     public function store($data)
     {
-        echo "<br>";
-        echo "</br>";
+        echo "Team Data to store : <br><pre>";
+        var_dump($data);
+        echo "</pre>";exit;
     }
 }

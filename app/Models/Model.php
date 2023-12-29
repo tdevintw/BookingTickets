@@ -6,13 +6,9 @@ class Model
 {
     private static $pdo = null;
 
-    public function __construct()
-    {
-        self::connect();
-    }
-
     protected static function selectRecords(string $table, string $columns = "*", string $where = null)
     {
+        self::connect();
         try {
             $sql = "SELECT $columns FROM $table";
 
@@ -28,15 +24,17 @@ class Model
             
             // Fetch the result set as an associative array
             $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-
+            self::deconnect();
             return $result;
         } catch (\PDOException $e) {
+            self::deconnect();
             return null;
         }
     }
 
     protected static function insertRecord(string $table, array $data)
     {
+        self::connect();
         // Use prepared statements to prevent SQL injection
         $columns = implode(', ', array_keys($data));
 
@@ -55,14 +53,17 @@ class Model
                 $i++;
             }
             $stmt->execute();
+            self::deconnect();
             return true;
         } catch (\PDOException $e) {
+            self::deconnect();
             return false;
         }
     }
 
     protected static function updateRecord($table, $data, $id)
     {
+        self::connect();
         // Use prepared statements to prevent SQL injection
         $args = array();
 
@@ -91,14 +92,17 @@ class Model
 
             // Execute the prepared statement
             $stmt->execute();
+            self::deconnect();
             return true;
         } catch (\PDOException $e) {
+            self::deconnect();
             return false;
         }
     }
 
     protected static function deleteRecord(string $table, int $id)
     {
+        self::connect();
         try {
             // Use prepared statements to prevent SQL injection
             $sql = "DELETE FROM $table WHERE id = ?";
@@ -111,13 +115,15 @@ class Model
 
             // Execute the prepared statement
             $stmt->execute();
+            self::deconnect();
             return true;
         } catch (\PDOException $e) {
+            self::deconnect();
             return false;
         }
     }
 
-    private function connect()
+    private static function connect()
     {
         if (!self::$pdo) {
             $config = require("./core/database.php");
@@ -127,5 +133,9 @@ class Model
                 $config['mysql']['password']
             );
         }
+    }
+
+    private static function deconnect(){
+        self::$pdo = null;
     }
 }

@@ -1,7 +1,7 @@
 <footer>
         <div class="top-footer">
             <div style="display:flex; align-items:center;">
-                <a class="navbar-brand" href="#"><img src="images/logo.png" style="width: 2rem;" alt=""></a>
+                <a class="navbar-brand" href="#"><img src="../../public/images/logo.png" style="width: 2rem;" alt=""></a>
                 <span>Stadium Stream</span>
             </div>
             <div class="footer-links">
@@ -16,9 +16,9 @@
         <div class="bootom-footer">
             <span>© All Right Reserved</span>
             <div style="display:flex ; gap:20px;">
-                <img src="images/youtube.svg" alt="">
-                <img src="images/facebook.svg" alt="">
-                <img src="images/instagram.svg" alt="">
+                <img src="../../public/images/youtube.svg" alt="">
+                <img src="../../public/images/facebook.svg" alt="">
+                <img src="../../public/images/instagram.svg" alt="">
             </div>
         </div>
     </footer>

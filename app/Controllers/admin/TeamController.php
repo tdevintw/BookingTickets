@@ -4,13 +4,15 @@ namespace app\Controllers\Admin;
 
 use app\Models\Team;
 use app\Controllers\Controller;
+use app\Models\Photo;
 
 class TeamController extends Controller
 {
     public function index()
     {
         $teams = Team::select();
-        // Get team photo by team['id'];
+        // $photo = Photo::select($teams['id']);
+        // $teams['photo'] = $photo;
         $this->render('admin/team/index', ['teams' => $teams]);
     }
 

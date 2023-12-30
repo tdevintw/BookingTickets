@@ -26,7 +26,7 @@
         ?>
 
         <div class="w-5/6">
-            <div class="flex flex-row items-center py-2 w-full px-2">
+            <div class="flex flex-row items-center py-1 w-full px-2">
                 <h3 class="mr-auto text-2xl font-bold text-cyan-800">List of Teams</h3>
                 <a class="cursor-pointer text-white font-bold bg-blue-600 rounded-xl p-2 h-10 hover:bg-blue-600"
                     href="<?= $_ENV['APP_URL'] . '/admin/team/create' ?>">
@@ -34,7 +34,7 @@
                 </a>
             </div>
 
-            <div class="flex flex-col w-full">
+            <div class="flex flex-col w-full overflow-scroll max-h-[80vh]">
 
                 <!-- Alert request message  -->
 

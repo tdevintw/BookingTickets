@@ -23,12 +23,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+    <link rel="stylesheet" href="../../public/assets/css/matches.css">
     <link rel="stylesheet" href="../../public/assets/css/reserveForm.css">
     <link rel="stylesheet" href="../../public/assets/header_footer.css">
-
-
-    <title>Login Form</title>
-   
+    <title></title>
   </head>
 
   <body>
@@ -37,33 +35,40 @@
         <div class="p-2" style="background-color: rgba(255, 255, 255, 0.3); height:140vh">
         <form class="reserve mx-auto">
               <h4 class="text-center">RESERVATION FORM</h4>
-              <p>CLIENTS DETAILS</p>
 
-              <div class="mb-3 mt-5">
-                <!-- <label for="exampleInputEmail1" class="form-label text-center">User Name</label> -->
-                <label for="exampleInputEmail1" class="form-label">User Name</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              </div>
-              <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email</label>
-                <!-- <label for="exampleInputPassword1" class="form-label">Email</label> -->
-                <input type="password" class="form-control" id="exampleInputPassword1">
-              </div>
-              <div class="mb-3">
-                <!-- <label for="exampleInputEmail1" class="form-label">Address</label> -->
-                <label for="exampleInputEmail1" class="form-label">Address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              </div>
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">phone</label>
-                <!-- <label for="exampleInputEmail1" class="form-label">phone</label> -->
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              </div>
 
-              <p class="mt-4 mb-5">SESSIONS DETAILS</p>
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">E-tickets</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <div class="d-flex flex-row mb-3 align-items-center">
+                      <label for="exampleInputEmail1" class="form-label me-4">E-tickets</label>
+                      <div class="text-center" style="border: 2px solid black; width:10%;">12</div>
+                  </div>
+      <div class="container w-100 col-md-6 text-center pt-8">
+        <div class="match-title card text-dark card-has-bg click-col" style="background-image:url('../../public/images/ticket.jpg'); ">
+            <div class="card-img-overlay d-flex flex-column">
+            <div class="card-body">
+                <h4 class="card-title text-center mt-4">Jan 13, 21:00</h4>
+                <p class="card-title mt-4 text-center ">Stadium : Olympic Stadium of Ebimpé</p>
+                <!-- <div class="d-flex flex-row align-items-center justify-content-between mb-2"> -->
+                <div class="d-flex flex-row align-items-center justify-content-between my-2">
+                        <div class="col-3  d-flex flex-column text-center">
+                            <img src="../../public/images/tag.svg" alt="">
+                            <p class="name mt-0 text-center">name</p>
+                        </div>
+                        <div class="vs me-2">VS</div>
+                        <div class="col-3  d-flex flex-column ms-2 text-center">
+                            <img src="../../public/images/tag.svg" alt="">
+                            <p class="name mt-0 text-center">name</p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+      </div></div>
+
+              <p class="info mt-3">SESSIONS DETAILS</p>
+              <hr class="" style="width: 20%;">
+
+              <div class="mb-3 mt-3">
+                <label for="exampleInputEmail1" class="titre form-label">E-tickets</label>
+                <input type="email" class="input form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
               </div>
           
               <button type="submit" class="bout btn btn-primary mt-5">Send your request here </button>

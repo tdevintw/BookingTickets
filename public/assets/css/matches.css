@@ -81,9 +81,9 @@ body{
      }
       .card-title{
         font-weight:800;
-        font-family: Inter;
+        /* font-family: Inter; */
         color: #fff;
-        font-size: 10px;
+        font-size: 20px;
         font-style: normal;
         font-weight: 700;
         line-height: normal;}
@@ -99,7 +99,7 @@ body{
       .name {
      
           font-weight:800;
-          font-family: Inter;
+          /* font-family: Inter; */
           color: #fff;
           font-size: 30px;
           font-style: normal;
@@ -109,7 +109,7 @@ body{
       
       .vs {
         color: #FFF;
-        font-family: Jockey One;
+        /* font-family: Jockey One; */
         font-size: 36px;
         font-style: normal;
         font-weight: 400;
@@ -126,7 +126,7 @@ body{
 
       .see {
         color: #FFF;
-        font-family: Poppins;
+        /* font-family: Poppins; */
         font-size: 12px;
         font-style: normal;
         font-weight: 400;

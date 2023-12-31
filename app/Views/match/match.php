@@ -40,8 +40,65 @@
                 </button>
             </div>
     </div>
+
+    <section class="mt-4" >
+    <div class=" col-md-6 text-center" style="margin:0 auto ;">
+        <div class="match-title card text-dark card-has-bg click-col mb-2" style="background-image:url('../../../public/images/match.jpg'); ">
+            <div class="card-img-overlay d-flex flex-column">
+            <div class="card-body">
+                <h4 class="card-title mt-0 text-center ">Jan 13, 21:00</h4>
+                <p class="card-title mt-0 text-center">Stadium : Olympic Stadium of Ebimpé</p>
+                <div class="d-flex flex-row align-items-center justify-content-between mb-2">
+                        <div class="col-3  d-flex flex-column text-center">
+                            <img src="../../../public/images/tag.svg" alt="">
+                            <p class="name mt-0 text-center">name</p>
+                        </div>
+                        <div class="vs me-2">VS</div>
+                        <div class="col-3  d-flex flex-column ms-2 text-center">
+                            <img src="../../../public/images/tag.svg" alt="">
+                            <p class="name mt-0 text-center">name</p>
+                        </div>
+                    </div>
+                    <!-- <div class="text-center"><a href="" class="btn border border-dotted  mt-5 py-3 px-5 fs-5">Reserve</a></div> -->
+                    <button type="button" class="btn btn-success mt-3 py-3 px-5 fs-5" style=""><a href="" class="reserve">Reserve</a></button>
+                </div>
+        </div>
+      </div></div>
+    </section>
+
+    <section class="">
+    <div class=" col-md-6 text-center" style="margin:0 auto ;">
+    <!-- <hr  style="width: 20%;"> -->
+        <h3 class="title text-start">Next Match</h3>
+    <hr  style="width: 18%">
+
+        <div class="match-title card text-dark card-has-bg click-col mb-2" style="background-image:url('../../../public/images/match.jpg'); ">
+            <div class="card-img-overlay d-flex flex-column">
+            <div class="card-body">
+                <h4 class="card-title mt-0 text-center ">Jan 13, 21:00</h4>
+                <p class="card-title mt-0 text-center">Stadium : Olympic Stadium of Ebimpé</p>
+                <div class="d-flex flex-row align-items-center justify-content-between mb-2">
+                        <div class="col-3  d-flex flex-column text-center">
+                            <img src="../../../public/images/tag.svg" alt="">
+                            <p class="name mt-0 text-center">name</p>
+                        </div>
+                        <div class="vs me-2">VS</div>
+                        <div class="col-3  d-flex flex-column ms-2 text-center">
+                            <img src="../../../public/images/tag.svg" alt="">
+                            <p class="name mt-0 text-center">name</p>
+                        </div>
+                    </div>
+                    <!-- <div class="text-center"><a href="" class="btn border border-dotted  mt-5 py-3 px-5 fs-5">Reserve</a></div> -->
+                    <button type="button" class="btn btn-success mt-3 py-3 px-5 fs-5" style=""><a href="" class="reserve">Reserve</a></button>
+                </div>
+        </div>
+      </div></div>
+    </section>
     
-<section class="wrapper">
+<section class="container">
+    <h3 class="title">Upcoming Match</h3>
+    <hr class="" style="width: 20%;">
+    
   <div class="">
     <!-- <div class="row">
     
@@ -66,7 +123,7 @@
                         </div>
                     </div>
                     <!-- <div class="text-center"><a href="" class="btn border border-dotted  mt-5 py-3 px-5 fs-5">Reserve</a></div> -->
-                    <button type="button" class="btn btn-success mt-5 py-3 px-5 fs-5" style=""><a href="" class="reserve">Reserve</a></button>
+                    <button type="button" class="btn btn-success mt-3 py-3 px-5 fs-5" style=""><a href="" class="reserve">Reserve</a></button>
                 </div>
         </div>
       </div></div>
@@ -89,7 +146,7 @@
                         </div>
                     </div>
                     <!-- <div class="text-center"><a href="" class="btn border border-dotted  mt-5 py-3 px-5 fs-5">Reserve</a></div> -->
-                    <button type="button" class="btn btn-success mt-5 py-3 px-5 fs-5" style=""><a href="" class="reserve">Reserve</a></button>
+                    <button type="button" class="btn btn-success mt-3 py-3 px-5 fs-5" style=""><a href="" class="reserve">Reserve</a></button>
                 </div>
         </div>
       </div></div>
@@ -112,7 +169,7 @@
                         </div>
                     </div>
                     <!-- <div class="text-center"><a href="" class="btn border border-dotted  mt-5 py-3 px-5 fs-5">Reserve</a></div> -->
-                    <button type="button" class="btn btn-success mt-5 py-3 px-5 fs-5" style=""><a href="" class="reserve">Reserve</a></button>
+                    <button type="button" class="btn btn-success mt-3 py-3 px-5 fs-5" style=""><a href="" class="reserve">Reserve</a></button>
                 </div>
         </div>
       </div></div>
@@ -135,7 +192,7 @@
                         </div>
                     </div>
                     <!-- <div class="text-center"><a href="" class="btn border border-dotted  mt-5 py-3 px-5 fs-5">Reserve</a></div> -->
-                    <button type="button" class="btn btn-success mt-5 py-3 px-5 fs-5" style=""><a href="" class="reserve">Reserve</a></button>
+                    <button type="button" class="btn btn-success mt-3 py-3 px-5 fs-5" style=""><a href="" class="reserve">Reserve</a></button>
                 </div>
         </div>
       </div></div>

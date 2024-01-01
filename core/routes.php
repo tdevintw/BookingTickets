@@ -1,7 +1,5 @@
 <?php
 
-use app\Controllers\Admin\AdminController;
-use app\Controllers\Admin\TeamController as AdminTeamController;
 use app\Controllers\ClientController;
 use app\Controllers\HomeController;
 use app\Controllers\TeamController;
@@ -19,10 +17,10 @@ $router->addRoute('/team', TeamController::class, 'index');
 $router->addRoute("/profile", ClientController::class, 'show');
 
 /*********** Admin routes ************/
-$router->addRoute('/admin/dashboard', AdminController::class, 'dashboard');
+$router->addRoute('/dashboard', HomeController::class, 'dashboard');
 
 // Team managment
-$router->addRoute('/admin/team', AdminTeamController::class, 'index');
-$router->addRoute('/admin/team/create', AdminTeamController::class, 'create');
-// $router->addRoute('/admin/team/store', AdminTeamController::class, 'create');
-$router->addRoute('/admin/team/delete', AdminTeamController::class, 'delete');
+$router->addRoute('/admin/team', TeamController::class, 'index');
+$router->addRoute('/admin/team/create', TeamController::class, 'create');
+$router->addRoute('/admin/team/store', TeamController::class, 'store');
+$router->addRoute('/admin/team/delete', TeamController::class, 'delete');

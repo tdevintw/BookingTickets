@@ -17,4 +17,10 @@ class Photo extends Model{
     public static function delete($id){
         return Model::deleteRecord('photos', $id);
     }
+
+    public function save(){
+        $data = get_object_vars($this);
+        $last_insert = parent::insertRecord('photos', $data);
+        return $last_insert;
+    }
 }

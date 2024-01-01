@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,10 +19,10 @@
     </style>
 </head>
 
-<body class="h-full">
+<body class="h-screen">
 
     <?php
-    require "app/Views/includes/navbar.php";
+    require "app/Views/includes/admin/navbar.php";
     ?>
 
     <div class="w-full flex flex-row">
@@ -27,67 +31,93 @@
         require "app/Views/includes/admin/aside.php";
         ?>
 
-        <div class="w-5/6 mx-auto bg-white rounded-md shadow-md flex flex-col items-center">
-            <h1 class="text-2xl font-semibold mb-6">Create Team</h1>
+        <div class="relative w-5/6 mx-auto bg-white rounded-md shadow-md">
+            <div class="absolute top-2 left-0">
+                <a href="<?= $_ENV['APP_URL'] . "/admin/team" ?>" class="bg-gray-300 cursor-pointer rounded-md m-2 p-1 text-md text-gray-600">
+                    < Back </a>
+            </div>
+            <div class="w-full flex flex-col items-center">
+                <h1 class="text-2xl font-semibold mb-6">Create Team</h1>
+                <?php
+                if (isset($_SESSION['success'])) {
+                ?>
+                    <p class="text-green-600 p-1"><?= $_SESSION['success'] ?></p>
+                <?php
+                unset($_SESSION['success']);
+                }
+                ?>
 
-            <form class="w-2/3 p-1" action="<?= $_ENV['APP_URL'] . "/admin/team/store" ?>" method="post">
+                <form class="w-2/3 p-1" action="<?= $_ENV['APP_URL'] . "/admin/team/store" ?>" method="post" enctype="multipart/form-data">
+                    
                 <!-- Team Name -->
-                <div class="mb-4">
-                    <label for="name" class="block text-gray-600 text-sm font-medium mb-2">Team Name</label>
-                    <input type="text" id="name" name="name" class="w-full px-3 py-2 border border-slate-400 rounded-md focus:outline-none focus:border-blue-500" required>
-                </div>
+                    <div class="">
+                        <label for="name" class="block text-gray-600 text-sm font-medium mb-2">Team Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-3 py-2 border border-slate-400 rounded-md focus:outline-none focus:border-blue-500" required>
+                    </div>
+                    <?php
+                    if (isset($_SESSION['errors']["name"])) {
+                        foreach ($_SESSION['errors']["name"] as $error) {
+                    ?>
+                            <p class="text-red-600 text-sm m-0"><?= $error ?></p>
+                    <?php
+                        }
+                    }
+                    ?>
 
-                <!-- Coach -->
-                <div class="mb-4">
-                    <label for="coach" class="block text-gray-600 text-sm font-medium mb-2">Coach</label>
-                    <input type="text" id="coach" name="coach" class="w-full px-3 py-2 border border-slate-400 rounded-md focus:outline-none focus:border-blue-500" required>
-                </div>
+                    <!-- Coach name -->
+                    <div class="mt-4">
+                        <label for="coach" class="block text-gray-600 text-sm font-medium mb-2">Coach</label>
+                        <input type="text" id="coach" name="coach" class="w-full px-3 py-2 border border-slate-400 rounded-md focus:outline-none focus:border-blue-500" required>
+                    </div>
+                    <?php
+                    if (isset($_SESSION['errors']["coach"])) {
+                        foreach ($_SESSION['errors']["coach"] as $error) {
+                    ?>
+                            <p class="text-red-600 text-sm m-0"><?= $error ?></p>
+                    <?php
+                        }
+                    }
+                    ?>
 
-                <!-- Captain -->
-                <div class="mb-4">
-                    <label for="captain" class="block text-gray-600 text-sm font-medium mb-2">Captain</label>
-                    <input type="text" id="captain" name="captain" class="w-full px-3 py-2 border border-slate-400 rounded-md focus:outline-none focus:border-blue-500" required>
-                </div>
+                    <!-- Country flag -->
+                    <div class="mt-4">
+                        <label for="flag" class="block text-gray-600 text-sm font-medium mb-2">Country flag</label>
+                        <input type="file" id="flag" name="flag" class="w-full px-3 py-2 border border-slate-400 rounded-md focus:outline-none focus:border-blue-500" required>
+                    </div>
+                    <?php
+                    if (isset($_SESSION['errors']["flag"])) {
+                        foreach ($_SESSION['errors']["flag"] as $error) {
+                    ?>
+                            <p class="text-red-600 text-sm m-0"><?= $error ?></p>
+                    <?php
+                        }
+                    }
+                    ?>
 
-                <!-- FIFA Ranking -->
-                <div class="mb-4">
-                    <label for="fifa-ranking" class="block text-gray-600 text-sm font-medium mb-2">FIFA Ranking</label>
-                    <input type="number" id="fifa-ranking" name="fifa_ranking" class="w-full px-3 py-2 border border-slate-400 rounded-md focus:outline-none focus:border-blue-500" required>
-                </div>
+                    <!-- Team photo -->
+                    <div class="mt-4">
+                        <label for="photo" class="block text-gray-600 text-sm font-medium mb-2">Team photo</label>
+                        <input type="file" id="photo" name="photo" class="w-full px-3 py-2 border border-slate-400 rounded-md focus:outline-none focus:border-blue-500" required>
+                    </div>
+                    <?php
+                    if (isset($_SESSION['errors']["photo"])) {
+                        foreach ($_SESSION['errors']["photo"] as $error) {
+                    ?>
+                            <p class="text-red-600 text-sm m-0"><?= $error ?></p>
+                    <?php
+                        }
+                    }
+                    unset($_SESSION['errors'])
+                    ?>
 
-                <!-- Description -->
-                <script>
-                    tinymce.init({
-                        selector: 'textarea',
-                        plugins: 'ai tinycomments mentions anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed permanentpen footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss',
-                        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | align lineheight | tinycomments | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
-                        tinycomments_mode: 'embedded',
-                        tinycomments_author: 'Author name',
-                        mergetags_list: [{
-                                value: 'First.Name',
-                                title: 'First Name'
-                            },
-                            {
-                                value: 'Email',
-                                title: 'Email'
-                            },
-                        ],
-                        ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
-                    });
-                </script>
-                
-                <div class="mb-4">
-                    <label for="description" class="block text-gray-600 text-sm font-medium mb-2">Description</label>
-                    <textarea id="description" name="description" rows="4" class="w-full px-3 py-2 border border-slate-400 rounded-md focus:outline-none focus:border-blue-500" required></textarea>
-                </div>
-
-                <!-- Submit Button -->
-                <div class="flex flex-row justify-center">
-                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800">
-                        Create Team
-                    </button>
-                </div>
-            </form>
+                    <!-- Submit Button -->
+                    <div class="flex flex-row justify-center">
+                        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800">
+                            Create Team
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
 
     </div>

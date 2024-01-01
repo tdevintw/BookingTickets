@@ -23,4 +23,6 @@ $router->addRoute('/dashboard', HomeController::class, 'dashboard');
 $router->addRoute('/admin/team', TeamController::class, 'index');
 $router->addRoute('/admin/team/create', TeamController::class, 'create');
 $router->addRoute('/admin/team/store', TeamController::class, 'store');
+$router->addRoute('/admin/team/edit', TeamController::class, 'edit');
+$router->addRoute('/admin/team/update', TeamController::class, 'update');
 $router->addRoute('/admin/team/delete', TeamController::class, 'delete');

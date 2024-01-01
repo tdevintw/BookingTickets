@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,7 +37,14 @@
                     + Add Team
                 </a>
             </div>
-
+            <?php
+            if (isset($_SESSION['success_update'])) {
+            ?>
+                <p class="text-green-600 p-1 w-100 text-center"><?= $_SESSION['success_update'] ?></p>
+            <?php
+                unset($_SESSION['success_update']);
+            }
+            ?>
             <div class="flex flex-col w-full overflow-y-scroll max-h-[80vh]">
 
                 <!-- Alert request message  -->
@@ -96,8 +107,8 @@
                                 </td>
 
                                 <td class="text-left border-r border-white">
-                                    <form class="text-center" action="./editForm.php" method="post">
-                                        <input type="hidden" name="id" id="id" value="">
+                                    <form class="text-center" action="<?= $_ENV['APP_URL'] . "/admin/team/edit" ?>" method="post">
+                                        <input type="hidden" name="id" id="id" value="<?= $team['id'] ?>">
                                         <button type="submit" class="hover:bg-green-500 hover:text-white text-green-500 border border-green-500 rounded-md p-2">
                                             Update
                                         </button>

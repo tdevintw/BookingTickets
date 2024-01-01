@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+$team = $team[0];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,22 +37,14 @@ session_start();
                     < Back </a>
             </div>
             <div class="w-full flex flex-col items-center">
-                <h1 class="text-2xl font-semibold mb-6">Create Team</h1>
-                <?php
-                if (isset($_SESSION['success'])) {
-                ?>
-                    <p class="text-green-600 p-1"><?= $_SESSION['success'] ?></p>
-                <?php
-                unset($_SESSION['success']);
-                }
-                ?>
+                <h1 class="text-2xl font-semibold mb-6">Edit Team</h1>
 
-                <form class="w-2/3 p-1" action="<?= $_ENV['APP_URL'] . "/admin/team/store" ?>" method="post" enctype="multipart/form-data">
-                    
-                <!-- Team Name -->
+                <form class="w-2/3 p-1" action="<?= $_ENV['APP_URL'] . "/admin/team/update" ?>" method="POST" enctype="multipart/form-data">
+
+                    <!-- Team Name -->
                     <div class="">
                         <label for="name" class="block text-gray-600 text-sm font-medium mb-2">Team Name</label>
-                        <input type="text" id="name" name="name" class="w-full px-3 py-2 border border-slate-400 rounded-md focus:outline-none focus:border-blue-500" required>
+                        <input value="<?= $team['name'] ?>" type="text" id="name" name="name" class="w-full px-3 py-2 border border-slate-400 rounded-md focus:outline-none focus:border-blue-500" required>
                     </div>
                     <?php
                     if (isset($_SESSION['errors']["name"])) {
@@ -67,7 +59,7 @@ session_start();
                     <!-- Coach name -->
                     <div class="mt-4">
                         <label for="coach" class="block text-gray-600 text-sm font-medium mb-2">Coach</label>
-                        <input type="text" id="coach" name="coach" class="w-full px-3 py-2 border border-slate-400 rounded-md focus:outline-none focus:border-blue-500" required>
+                        <input value="<?= $team['coach'] ?>" type="text" id="coach" name="coach" class="w-full px-3 py-2 border border-slate-400 rounded-md focus:outline-none focus:border-blue-500" required>
                     </div>
                     <?php
                     if (isset($_SESSION['errors']["coach"])) {
@@ -82,7 +74,7 @@ session_start();
                     <!-- Country flag -->
                     <div class="mt-4">
                         <label for="flag" class="block text-gray-600 text-sm font-medium mb-2">Country flag</label>
-                        <input type="file" id="flag" name="flag" class="w-full px-3 py-2 border border-slate-400 rounded-md focus:outline-none focus:border-blue-500" required>
+                        <input type="file" id="flag" name="flag" class="w-full px-3 py-2 border border-slate-400 rounded-md focus:outline-none focus:border-blue-500">
                     </div>
                     <?php
                     if (isset($_SESSION['errors']["flag"])) {
@@ -97,7 +89,7 @@ session_start();
                     <!-- Team photo -->
                     <div class="mt-4">
                         <label for="photo" class="block text-gray-600 text-sm font-medium mb-2">Team photo</label>
-                        <input type="file" id="photo" name="photo" class="w-full px-3 py-2 border border-slate-400 rounded-md focus:outline-none focus:border-blue-500" required>
+                        <input type="file" id="photo" name="photo" class="w-full px-3 py-2 border border-slate-400 rounded-md focus:outline-none focus:border-blue-500">
                     </div>
                     <?php
                     if (isset($_SESSION['errors']["photo"])) {
@@ -110,10 +102,13 @@ session_start();
                     unset($_SESSION['errors'])
                     ?>
 
+                    <input type="hidden" name="id" id="id" value="<?= $team['id'] ?>">
+                    <input type="hidden" name="flag_src" id="flag_src" value="<?= $team['flag_src'] ?>">
+                    <input type="hidden" name="photo_src" id="photo_src" value="<?= $team['photo_src'] ?>">
                     <!-- Submit Button -->
                     <div class="flex flex-row justify-center">
                         <button type="submit" class="bg-blue-500 text-white px-4 py-2 mt-4 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800">
-                            Create Team
+                            Update
                         </button>
                     </div>
                 </form>

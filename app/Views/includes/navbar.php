@@ -1,22 +1,36 @@
-<nav class="w-full bg-green-700 border-b lg:px-10 border-green-100 dark:bg-gray-800 dark:border-gray-700">
-    <div class="flex items-center justify-between px-3 py-3 lg:px-8 lg:pl-3">
-        <div id="logo" class="flex items-center">
-            <a href="<?= $_ENV['APP_URL'] . "/admin/dashboard" ?>" class="flex md:mr-24 gap-2 items-center">
-                <!-- Logo -->
-                <img class="w-6" src="<?= $_ENV['APP_URL'] . "/public/images/logo.png" ?>" alt="LOGO">
+<header>
+        <nav class="navbar navbar-expand-lg">
+            <div class=" container">
+            <div style="display:flex; align-items:center;">
+                <a class="navbar-brand" href="#"><img src="../../public/images/logo.png" alt="logo"></a>
+                <span>Stadium Stream</span>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars" style="color: white;"></i>
+            </button>
+            <div class="collapse navbar-collapse navbar_box" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin: 0 auto;">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.php">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="search.php">Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.php">Contact</a>
+                    </li>
+                </ul>
 
-                <span class="logo sm:text-md md:text-xl tracking-wider font-semibold text-white">StadiumStream</span>
-            </a>
-        </div>
-        
-        <!-- User photo and name -->
-        <div class="flex items-center gap-2">
-            <div>
-                <img class="w-10 h-10 cover rounded-full" src="<?= $_ENV['APP_URL'] . "/public/images/adnan.jpg" ?>" alt="user photo">
+                <form class='d-flex nav_btn' role='search'>
+                    <a href='sign.php' style="background-color:orange;font-weight:bold;"
+                        class='btn btn-primary'>Connect</a>
+                </form>
             </div>
-            <div class="text-white">
-            Adnan A.
             </div>
-        </div>
-    </div>
-</nav>
+        </nav>
+    </header>

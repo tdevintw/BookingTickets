@@ -23,17 +23,27 @@
         height: 300px;
     }
 
-    .swiper-button-next , .swiper-button-prev{
-       background-color:orange;
-       color:white;
-       padding:30px;
-       height:10px;
+    .swiper-button-next,
+    .swiper-button-prev {
+        background-color: orange;
+        color: white;
+        padding: 30px;
+        height: 10px;
+        border-radius: 10px;
     }
-       div.swiper-button-next::after , div.swiper-button-next::after{
-       color:green;
+
+    div.swiper-button-next::after,
+    div.swiper-button-prev::after {
+        color: white;
+        margin: 10px;
 
     }
 
+    .swiper-slide {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
     </style>
 </head>
 
@@ -41,7 +51,7 @@
 
 
     <?php require "includes/navbar.php"; ?>
-    <section class="main-home">
+    <section class="main-home" style="margin-bottom:50px;">
         <div class="main-hero">
             <h1 class="hero-header">Exciting moments<br>await You</h1>
         </div>
@@ -55,25 +65,110 @@
                 </button>
             </div>
         </div>
-        <!-- Slider main container -->
-        <div class="swiper">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-                <!-- Slides -->
-                <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 2</div>
-                <div class="swiper-slide">Slide 3</div>
-                ...
+        <div class="teams" style="margin-top:50px;">
+            <div style="display:flex;justify-content:space-around;align-items:center;">
+                <h2>Nationale Teams</h2>
+                <button
+                    style="border-radius: 0.5rem;background: #329819;color:white;padding:8px;padding-left:15px;padding-right:15px;border:none;">View
+                    All</button>
             </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-
-            <!-- If we need scrollbar -->
-            <div class="swiper-scrollbar"></div>
+            <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:50px;margin-top:50px;">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="../../public/images/Morocco.jpeg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Morocco Nationale Team</h5>
+                        <p>Group F</p>
+                        <div style="display:flex;">
+                            <img src="../../public/images/location.svg" style="height:30px;">
+                            <h4>Morocco</h4>
+                        </div>
+                        <div style="text-align:center;margin-top:10px;">
+                            <a href="#" style="background-color:orange;color:white;font-weight:bold;" class="btn">More
+                                Infos</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="../../public/images/Morocco.jpeg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Morocco Nationale Team</h5>
+                        <p>Group F</p>
+                        <div style="display:flex;">
+                            <img src="../../public/images/location.svg" style="height:30px;">
+                            <h4>Morocco</h4>
+                        </div>
+                        <div style="text-align:center;margin-top:10px;">
+                            <a href="#" style="background-color:orange;color:white;font-weight:bold;" class="btn">More
+                                Infos</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="../../public/images/Morocco.jpeg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Morocco Nationale Team</h5>
+                        <p>Group F</p>
+                        <div style="display:flex;">
+                            <img src="../../public/images/location.svg" style="height:30px;">
+                            <h4>Morocco</h4>
+                        </div>
+                        <div style="text-align:center;margin-top:10px;">
+                            <a href="#" style="background-color:orange;color:white;font-weight:bold;" class="btn">More
+                                Infos</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="../../public/images/Morocco.jpeg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Morocco Nationale Team</h5>
+                        <p>Group F</p>
+                        <div style="display:flex;">
+                            <img src="../../public/images/location.svg" style="height:30px;">
+                            <h4>Morocco</h4>
+                        </div>
+                        <div style="text-align:center;margin-top:10px;">
+                            <a href="#" style="background-color:orange;color:white;font-weight:bold;" class="btn">More
+                                Infos</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="../../public/images/Morocco.jpeg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Morocco Nationale Team</h5>
+                        <p>Group F</p>
+                        <div style="display:flex;">
+                            <img src="../../public/images/location.svg" style="height:30px;">
+                            <h4>Morocco</h4>
+                        </div>
+                        <div style="text-align:center;margin-top:10px;">
+                            <a href="#" style="background-color:orange;color:white;font-weight:bold;" class="btn">More
+                                Infos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="stadiums" style="margin-top:50px;">
+            <div style="display:flex;justify-content:space-around;align-items:center;">
+                <h2>Nationale Teams</h2>
+                <button
+                    style="border-radius: 0.5rem;background: #329819;color:white;padding:8px;padding-left:15px;padding-right:15px;border:none;">View
+                    All</button>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:50px;margin-top:50px;">
+                <div class="card" style="width: 18rem;text-align:center;">
+                    <img class="card-img-top" src="../../public/images/stadium.svg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Olympic Stadium of Ebimpé</h5>
+                        <p><b>Capacity:</b> 60,012</p>
+                        <div style="text-align:center;margin-top:10px;">
+                            <a href="#" style="background-color:orange;color:white;font-weight:bold;" class="btn">More
+                                Infos</a>
+                        </div>
+                    </div>
+                </div>
         </div>
     </section>
     <?php require "includes/footer.php"; ?>
@@ -91,8 +186,8 @@
 
         // Navigation arrows
         navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: '.next',
+            prevEl: '.prev',
         },
 
         // And if we need scrollbar

@@ -11,8 +11,8 @@
   </head>
   <body>
     
-        <div class="container-fluid">
-            <form class="mx-auto" id="C_form">
+        <div class="container-fluid" id="contact-form">
+            <form class="mx-auto" id="contact-form">
                 <h4 class="text-center">Conta<span class="text text-success ">ct Us</span></h4>  <span></span>
 
                 <div class="row">
@@ -20,8 +20,10 @@
                     <!--Grid column-->
                     <div class="col-md-6">
                         <div class="md-form mb-0">
-                            <label for="exampleInputName" class="form-label">your Name</label>
-                            <input type="text" class="form-control" id="exampleInputName" >
+                            <label for="name_in" class="form-label">your Name</label>
+                            <input type="text" class="form-control" id="name_in" >
+                            <span id="name_error" class="text text-danger"></span>
+
                         </div>
                     </div>
                     <!--Grid column-->
@@ -36,8 +38,9 @@
                     <!--Grid column-->
 
                     <div class="md-form mb-0">
-                        <label for="exampleInputEmail1" class="form-label">your Email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <label for="email_in" class="form-label">your Email</label>
+                        <input type="email" class="form-control" id="email_in" aria-describedby="emailHelp">
+                        <span id="email_error" class="text text-danger"></span>
                     </div>
                 
 
@@ -45,7 +48,9 @@
 
             <div class="mb-3 mt-5">
              <label for="exampleInputMessage" class="form-label">Message</label>
-             <input type="text" class="form-control" id="exampleInputMessage" >
+             <input type="text" class="form-control" id="message_in" >
+             <span id="message_error" class="text text-danger"></span>
+
            </div>
               
                 <button type="submit" class="btn btn-primary mt-5">Send</button>

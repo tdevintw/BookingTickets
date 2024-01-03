@@ -11,6 +11,11 @@ $router = new Router();
 
 // Home
 $router->addRoute('/', HomeController::class, 'index');
+$router->addRoute('/matchs', HomeController::class, 'matchs');
+$router->addRoute('/form', HomeController::class, 'form');
+$router->addRoute('/about', HomeController::class, 'about');
+
+
 
 // Team resource
 $router->addRoute('/team', TeamController::class, 'index');

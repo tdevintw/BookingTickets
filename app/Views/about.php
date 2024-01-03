@@ -18,8 +18,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <link rel="stylesheet" href="../../public/assets/css/about.css">
-    <link rel="stylesheet" href="../../public/assets/header_footer.css">
+    <link rel="stylesheet" href="public/assets/css/about.css">
+    <link rel="stylesheet" href="public/assets/header_footer.css">
     
 </head>
 <body>
@@ -90,7 +90,7 @@
                   </div>
                   <div class="col-lg-6 order-1 order-lg-2 hero-img d-flex flex-column justify-content-center" data-aos="zoom-in" data-aos-delay="200">
                       <div class="mb-4">
-                          <img src="../../public/images/player.jpg" class="img-fluid animated" alt="">
+                          <img src="public/images/player.jpg" class="img-fluid animated" alt="">
                       </div>
                   </div>
               </div>
@@ -123,20 +123,20 @@
     <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
       <div class="card shadow-sm border-0 rounded">
         
-        <div class="card-body p-0"><img src="../../public/images/team.png" alt="" class="w-100 card-img-top">
+        <div class="card-body p-0"><img src="public/images/team.png" alt="" class="w-100 card-img-top">
           <div class="p-4">
             <h5 class="mb-0">Mark Rockwell</h5>
             <p class="small text-muted">CEO - Consultant</p>
             <ul class="social mb-0 list-inline mt-3">
               <li class="list-inline-item m-0"><a href="#" class="social-link">
-                <img src="../../public/images/fb.svg" alt="">
+                <img src="public/images/fb.svg" alt="">
               </a></li>
               <li class="list-inline-item m-0"><a href="#" class="social-link">  
-                <img src="../../public/images/twitter.svg" alt="">
+                <img src="public/images/twitter.svg" alt="">
               </a></li>
               
               <li class="list-inline-item m-0"><a href="#" class="social-link">                
-                <img src="../../public/images/gmail.svg" alt="">
+                <img src="public/images/gmail.svg" alt="">
               </a></li>
             </ul>
           </div>
@@ -147,20 +147,20 @@
     <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
 
     <div class="card shadow-sm border-0 rounded">
-        <div class="card-body p-0"><img src="../../public/images/team.png" alt="" class="w-100 card-img-top">
+        <div class="card-body p-0"><img src="public/images/team.png" alt="" class="w-100 card-img-top">
           <div class="p-4">
             <h5 class="mb-0">Mark Rockwell</h5>
             <p class="small text-muted">CEO - Consultant</p>
             <ul class="social mb-0 list-inline mt-3">
               <li class="list-inline-item m-0"><a href="#" class="social-link">
-                <img src="../../public/images/fb.svg" alt="">
+                <img src="public/images/fb.svg" alt="">
               </a></li>
               <li class="list-inline-item m-0"><a href="#" class="social-link">  
-                <img src="../../public/images/twitter.svg" alt="">
+                <img src="public/images/twitter.svg" alt="">
               </a></li>
               
               <li class="list-inline-item m-0"><a href="#" class="social-link">                
-                <img src="../../public/images/gmail.svg" alt="">
+                <img src="public/images/gmail.svg" alt="">
               </a></li>
             </ul>
           </div>
@@ -170,20 +170,20 @@
     <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
 
     <div class="card shadow-sm border-0 rounded">
-        <div class="card-body p-0"><img src="../../public/images/team.png" alt="" class="w-100 card-img-top">
+        <div class="card-body p-0"><img src="public/images/team.png" alt="" class="w-100 card-img-top">
           <div class="p-4">
             <h5 class="mb-0">Mark Rockwell</h5>
             <p class="small text-muted">CEO - Consultant</p>
             <ul class="social mb-0 list-inline mt-3">
               <li class="list-inline-item m-0"><a href="#" class="social-link">
-                <img src="../../public/images/fb.svg" alt="">
+                <img src="public/images/fb.svg" alt="">
               </a></li>
               <li class="list-inline-item m-0"><a href="#" class="social-link">  
-                <img src="../../public/images/twitter.svg" alt="">
+                <img src="public/images/twitter.svg" alt="">
               </a></li>
               
               <li class="list-inline-item m-0"><a href="#" class="social-link">                
-                <img src="../../public/images/gmail.svg" alt="">
+                <img src="public/images/gmail.svg" alt="">
               </a></li>
             </ul>
           </div>
@@ -194,20 +194,20 @@
     <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
       <!-- Card-->
       <div class="card shadow-sm border-0 rounded">
-        <div class="card-body p-0"><img src="../../public/images/team.png" alt="" class="w-100 card-img-top">
+        <div class="card-body p-0"><img src="public/images/team.png" alt="" class="w-100 card-img-top">
           <div class="p-4">
             <h5 class="mb-0">Mark Rockwell</h5>
             <p class="small text-muted">CEO - Consultant</p>
             <ul class="social mb-0 list-inline mt-3">
               <li class="list-inline-item m-0"><a href="#" class="social-link">
-                <img src="../../public/images/fb.svg" alt="">
+                <img src="public/images/fb.svg" alt="">
               </a></li>
               <li class="list-inline-item m-0"><a href="#" class="social-link">  
-                <img src="../../public/images/twitter.svg" alt="">
+                <img src="public/images/twitter.svg" alt="">
               </a></li>
               
               <li class="list-inline-item m-0"><a href="#" class="social-link">                
-                <img src="../../public/images/gmail.svg" alt="">
+                <img src="public/images/gmail.svg" alt="">
               </a></li>
             </ul>
           </div>
@@ -221,27 +221,27 @@
       <div class="">
         <div class="row" data-aos="zoom-in">
           <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="../../public/images/client-2.png" class="img-fluid" alt="" style="width:50%">
+            <img src="public/images/client-2.png" class="img-fluid" alt="" style="width:50%">
           </div>
 
           <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="../../public/images/client-2.png" class="img-fluid" alt="" style="width:50%">
+            <img src="public/images/client-2.png" class="img-fluid" alt="" style="width:50%">
           </div>
 
           <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="../../public/images/client-4.png" class="img-fluid" alt="" style="width:50%">
+            <img src="public/images/client-4.png" class="img-fluid" alt="" style="width:50%">
           </div>
 
           <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="../../public/images/client-5.png" class="img-fluid" alt="" style="width:50%">
+            <img src="public/images/client-5.png" class="img-fluid" alt="" style="width:50%">
           </div>
 
           <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="../../public/images/client-6.png" class="img-fluid" alt="" style="width:50%">
+            <img src="public/images/client-6.png" class="img-fluid" alt="" style="width:50%">
           </div>
 
           <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="../../public/images/client-5.png" class="img-fluid" alt="" style="width:50%">
+            <img src="public/images/client-5.png" class="img-fluid" alt="" style="width:50%">
           </div>          
 
         </div>

@@ -2,7 +2,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class=" container">
             <div style="display:flex; align-items:center;">
-                <a class="navbar-brand" href="#"><img src="../../public/images/logo.png" alt="logo"></a>
+                <a class="navbar-brand" href="#"><img src="./public/images/logo.png" alt="logo"></a>
                 <span>Stadium Stream</span>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

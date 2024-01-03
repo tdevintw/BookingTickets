@@ -1,3 +1,6 @@
+<?php 
+    require_once "C:\Users\Youcode\Desktop\LARAGON\www\BookingTickets\app\Controllers\TeamController.php";
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -19,16 +22,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <link rel="stylesheet" href="../../../public/assets/css/matches.css">
+    <link rel="stylesheet" href="./public/assets/css/matches.css">
 
-    <link rel="stylesheet" href="../../../public/assets/header_footer.css">
+    <link rel="stylesheet" href="./public/assets/header_footer.css">
     
-
-    
-    <title>Login Form</title>
+    <title></title>
   </head>
 <body>
-  <?php require "../includes/navbar.php"; ?>
+  <?php require "./app/Views/includes/navbar.php"; ?>
 
   <div style="display:flex;justify-content:center;">
             <div class="search-section">
@@ -36,26 +37,26 @@
 
                 <input type="text" id="datepicker" placeholder="Date">
                 <button type="button" class="btn btn-success">
-                    <img src="../../../public/images/search_icon.png" alt="search">
+                    <img src="./public/images/search_icon.png" alt="search">
                 </button>
             </div>
     </div>
 
     <section class="mt-4" >
     <div class=" col-md-6 text-center" style="margin:0 auto ;">
-        <div class="match-title card text-dark card-has-bg click-col mb-2" style="background-image:url('../../../public/images/match.jpg'); ">
+        <div class="match-title card text-dark card-has-bg click-col mb-2" style="background-image:url('./public/images/match.jpg'); ">
             <div class="card-img-overlay d-flex flex-column">
             <div class="card-body">
                 <h4 class="card-title mt-0 text-center ">Jan 13, 21:00</h4>
                 <p class="card-title mt-0 text-center">Stadium : Olympic Stadium of Ebimpé</p>
                 <div class="d-flex flex-row align-items-center justify-content-between mb-2">
                         <div class="col-3  d-flex flex-column text-center">
-                            <img src="../../../public/images/tag.svg" alt="">
+                            <img src="./public/images/tag.svg" alt="">
                             <p class="name mt-0 text-center">name</p>
                         </div>
                         <div class="vs me-2">VS</div>
                         <div class="col-3  d-flex flex-column ms-2 text-center">
-                            <img src="../../../public/images/tag.svg" alt="">
+                            <img src="./public/images/tag.svg" alt="">
                             <p class="name mt-0 text-center">name</p>
                         </div>
                     </div>
@@ -72,19 +73,19 @@
         <h3 class="title text-start">Next Match</h3>
     <hr  style="width: 18%">
 
-        <div class="match-title card text-dark card-has-bg click-col mb-2" style="background-image:url('../../../public/images/match.jpg'); ">
+        <div class="match-title card text-dark card-has-bg click-col mb-2" style="background-image:url('./public/images/match.jpg'); ">
             <div class="card-img-overlay d-flex flex-column">
             <div class="card-body">
                 <h4 class="card-title mt-0 text-center ">Jan 13, 21:00</h4>
                 <p class="card-title mt-0 text-center">Stadium : Olympic Stadium of Ebimpé</p>
                 <div class="d-flex flex-row align-items-center justify-content-between mb-2">
                         <div class="col-3  d-flex flex-column text-center">
-                            <img src="../../../public/images/tag.svg" alt="">
+                            <img src="./public/images/tag.svg" alt="">
                             <p class="name mt-0 text-center">name</p>
                         </div>
                         <div class="vs me-2">VS</div>
                         <div class="col-3  d-flex flex-column ms-2 text-center">
-                            <img src="../../../public/images/tag.svg" alt="">
+                            <img src="./public/images/tag.svg" alt="">
                             <p class="name mt-0 text-center">name</p>
                         </div>
                     </div>
@@ -106,19 +107,41 @@
   <div class="row">
 
       <div class=" col-md-6 text-center">
-        <div class="match-title card text-dark card-has-bg click-col mb-2" style="background-image:url('../../../public/images/match.jpg'); ">
+        <div class="match-title card text-dark card-has-bg click-col mb-2" style="background-image:url('./public/images/match.jpg'); ">
             <div class="card-img-overlay d-flex flex-column">
             <div class="card-body">
                 <h4 class="card-title mt-0 text-center ">Jan 13, 21:00</h4>
                 <p class="card-title mt-0 text-center">Stadium : Olympic Stadium of Ebimpé</p>
                 <div class="d-flex flex-row align-items-center justify-content-between mb-2">
                         <div class="col-3  d-flex flex-column text-center">
-                            <img src="../../../public/images/tag.svg" alt="">
+                            <img src="./public/images/tag.svg" alt="">
                             <p class="name mt-0 text-center">name</p>
                         </div>
                         <div class="vs me-2">VS</div>
                         <div class="col-3  d-flex flex-column ms-2 text-center">
-                            <img src="../../../public/images/tag.svg" alt="">
+                            <img src="./public/images/tag.svg" alt="">
+                            <p class="name mt-0 text-center">name</p>
+                        </div>
+                </div>
+                <button type="button" class="btn btn-success mt-3 py-3 px-5 fs-5" style=""><a href="" class="reserve">Reserve</a></button>
+            </div>
+        </div>
+      </div></div>
+
+      <div class=" col-md-6 text-center">
+        <div class="match-title card text-dark card-has-bg click-col" style="background-image:url('./public/images/match.jpg'); ">
+            <div class="card-img-overlay d-flex flex-column">
+            <div class="card-body">
+                <h4 class="card-title mt-0 text-center ">Jan 13, 21:00</h4>
+                <p class="card-title mt-0 text-center">Stadium : Olympic Stadium of Ebimpé</p>
+                <div class="d-flex flex-row align-items-center justify-content-between mb-2">
+                        <div class="col-3  d-flex flex-column text-center">
+                            <img src="./public/images/tag.svg" alt="">
+                            <p class="name mt-0 text-center">name</p>
+                        </div>
+                        <div class="vs me-2">VS</div>
+                        <div class="col-3  d-flex flex-column ms-2 text-center">
+                            <img src="./public/images/tag.svg" alt="">
                             <p class="name mt-0 text-center">name</p>
                         </div>
                     </div>
@@ -129,19 +152,19 @@
       </div></div>
 
       <div class=" col-md-6 text-center">
-        <div class="match-title card text-dark card-has-bg click-col" style="background-image:url('../../../public/images/match.jpg'); ">
+        <div class="match-title card text-dark card-has-bg click-col" style="background-image:url('./public/images/match.jpg'); ">
             <div class="card-img-overlay d-flex flex-column">
             <div class="card-body">
                 <h4 class="card-title mt-0 text-center ">Jan 13, 21:00</h4>
                 <p class="card-title mt-0 text-center">Stadium : Olympic Stadium of Ebimpé</p>
                 <div class="d-flex flex-row align-items-center justify-content-between mb-2">
                         <div class="col-3  d-flex flex-column text-center">
-                            <img src="../../../public/images/tag.svg" alt="">
+                            <img src="./public/images/tag.svg" alt="">
                             <p class="name mt-0 text-center">name</p>
                         </div>
                         <div class="vs me-2">VS</div>
                         <div class="col-3  d-flex flex-column ms-2 text-center">
-                            <img src="../../../public/images/tag.svg" alt="">
+                            <img src="./public/images/tag.svg" alt="">
                             <p class="name mt-0 text-center">name</p>
                         </div>
                     </div>
@@ -152,42 +175,19 @@
       </div></div>
 
       <div class=" col-md-6 text-center">
-        <div class="match-title card text-dark card-has-bg click-col" style="background-image:url('../../../public/images/match.jpg'); ">
+        <div class="match-title card text-dark card-has-bg click-col" style="background-image:url('./public/images/match.jpg'); ">
             <div class="card-img-overlay d-flex flex-column">
             <div class="card-body">
                 <h4 class="card-title mt-0 text-center ">Jan 13, 21:00</h4>
                 <p class="card-title mt-0 text-center">Stadium : Olympic Stadium of Ebimpé</p>
                 <div class="d-flex flex-row align-items-center justify-content-between mb-2">
                         <div class="col-3  d-flex flex-column text-center">
-                            <img src="../../../public/images/tag.svg" alt="">
+                            <img src="./public/images/tag.svg" alt="">
                             <p class="name mt-0 text-center">name</p>
                         </div>
                         <div class="vs me-2">VS</div>
                         <div class="col-3  d-flex flex-column ms-2 text-center">
-                            <img src="../../../public/images/tag.svg" alt="">
-                            <p class="name mt-0 text-center">name</p>
-                        </div>
-                    </div>
-                    <!-- <div class="text-center"><a href="" class="btn border border-dotted  mt-5 py-3 px-5 fs-5">Reserve</a></div> -->
-                    <button type="button" class="btn btn-success mt-3 py-3 px-5 fs-5" style=""><a href="" class="reserve">Reserve</a></button>
-                </div>
-        </div>
-      </div></div>
-
-      <div class=" col-md-6 text-center">
-        <div class="match-title card text-dark card-has-bg click-col" style="background-image:url('../../../public/images/match.jpg'); ">
-            <div class="card-img-overlay d-flex flex-column">
-            <div class="card-body">
-                <h4 class="card-title mt-0 text-center ">Jan 13, 21:00</h4>
-                <p class="card-title mt-0 text-center">Stadium : Olympic Stadium of Ebimpé</p>
-                <div class="d-flex flex-row align-items-center justify-content-between mb-2">
-                        <div class="col-3  d-flex flex-column text-center">
-                            <img src="../../../public/images/tag.svg" alt="">
-                            <p class="name mt-0 text-center">name</p>
-                        </div>
-                        <div class="vs me-2">VS</div>
-                        <div class="col-3  d-flex flex-column ms-2 text-center">
-                            <img src="../../../public/images/tag.svg" alt="">
+                            <img src="./public/images/tag.svg" alt="">
                             <p class="name mt-0 text-center">name</p>
                         </div>
                     </div>
@@ -201,7 +201,36 @@
 </div>
 </section>
 <div ><a class="see" href="">See more</a></div>
-<?php require "../includes/footer.php"; ?>
+
+<?php 
+    // foreach();
+?>
+
+<div class=" col-md-6 text-center">
+        <div class="match-title card text-dark card-has-bg click-col" style="background-image:url('./public/images/match.jpg'); ">
+            <div class="card-img-overlay d-flex flex-column">
+            <div class="card-body">
+                <h4 class="card-title mt-0 text-center ">Jan 13, 21:00</h4>
+                <p class="card-title mt-0 text-center">Stadium : Olympic Stadium of Ebimpé</p>
+                <div class="d-flex flex-row align-items-center justify-content-between mb-2">
+                        <div class="col-3  d-flex flex-column text-center">
+                            <img src="./public/images/tag.svg" alt="">
+                            <p class="name mt-0 text-center">name</p>
+                        </div>
+                        <div class="vs me-2">VS</div>
+                        <div class="col-3  d-flex flex-column ms-2 text-center">
+                            <img src="./public/images/tag.svg" alt="">
+                            <p class="name mt-0 text-center">name</p>
+                        </div>
+                    </div>
+                    <!-- <div class="text-center"><a href="" class="btn border border-dotted  mt-5 py-3 px-5 fs-5">Reserve</a></div> -->
+                    <button type="button" class="btn btn-success mt-3 py-3 px-5 fs-5" style=""><a href="" class="reserve">Reserve</a></button>
+                </div>
+        </div>
+</div></div>
+
+
+<?php require "./app/Views/includes/footer.php"; ?>
 <script>
     $(function() {
         $("#datepicker").datepicker();

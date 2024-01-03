@@ -1,3 +1,8 @@
+
+<?
+
+use core\Validator;
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -12,15 +17,15 @@
   </head>
   <body>
         <div class="container container-fluid">
-            <form class="mx-auto">
+            <form class="mx-auto" method="post" >
                 <h4 class="text-center">Login</h4>
                 <div class="mb-3 mt-5">
-                  <label for="exampleInputEmail1" class="form-label">User Name</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" >
+                  <label for="exampleInputEmail1" class="form-label">Email</label>
+                  <input  name="email" type="email" class="form-control" id="exampleInputEmail1" >
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
+                  <input name="password" type="password" class="form-control" id="exampleInputPassword1">
                   <div  class="form-text mt-3">Forget password ?</div>
                 </div>
               

@@ -4,7 +4,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<?php include_once'head_hf.php'; ?>
+<?php 
+// include_once'head_hf.php'; 
+?>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="public\assets\css\c_au.css" rel="stylesheet" >
@@ -14,23 +16,23 @@
 
   
         <div class="container-fluid">
-            <form class="mx-auto" id="regester-form">
+            <form class="mx-auto" id="regester-form" method="post" >
                 <h4 class="text-center">Login</h4>
                 <div class="mb-3 mt-5">
                   <label for="name_inp" class="form-label">Your Name</label>
-                  <input type="text" class="form-control" id="name_inp">
+                  <input name="fullName" type="text" class="form-control" id="name_inp">
                   <span id="name_reg_err" class="text text-danger"></span>
 
                 </div>
                 <div class="mb-3 mt-5">
                     <label for="mail_inp" class="form-label">Your Email</label>
-                    <input type="email" class="form-control" id="mail_inp" aria-describedby="emailHelp">
+                    <input  name="email" type="email" class="form-control" id="mail_inp" aria-describedby="emailHelp">
                     <span id="email_reg_err" class="text text-danger"></span>
 
                   </div>
                 <div class="mb-3">
                   <label for="password_inp" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="password_inp">
+                  <input name="password" type="password" class="form-control" id="password_inp">
                   <span id="password_reg_err" class="text text-danger" ></span>
 
                 </div>

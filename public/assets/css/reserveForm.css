@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+/* *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  
+} */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url('../../images/terrin.jpg');
+    
+}
+
+  
+.reserve{
+    border-radius: 20px;
+    margin-top: 80px !important;
+    width: 50% !important;
+    color : white;
+    background: linear-gradient(90deg, rgb(1, 57, 13) 0%, rgb(4, 87, 37) 35%, rgb(53, 105, 5) 100%);
+    padding: 50px;
+}
+
+.input {
+    font-size: 20px;
+}
+
+.info {
+    font-size: 20px;
+}
+
+.titre {
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.bout{
+    width: 100%;
+    /* height: 10%; */
+    font-size: 20px;
+    border: none;
+    border-radius: 8px;
+    /* background: linear-gradient(90deg, rgb(1, 57, 13) 0%, rgb(4, 87, 37) 35%, rgb(53, 105, 5) 100%); */
+    background-color: orange;
+    
+}
+
+.form-control{
+    color: rgba(0,0,0,.87);
+    border-bottom-color: rgba(0,0,0,.42);
+    box-shadow: none !important;
+    border: none;
+    border-bottom: 1px solid;
+    border-radius: 4px 4px 0 0;
+    }
+ h4{
+    font-size: 2rem !important;
+    font-weight: 700;
+ }  
+ .form-label{
+    font-weight: 800 !important;
+ }
+
+ .QS {
+    border-radius: 0px 12px 12px 0px !important;
+    border: 0px solid #000;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+ }
+
+ .rr {
+  padding: 2%;
+  width: 50%;
+  background-color: #fff;
+  border-radius: 18px;
+
+}
+
+h3 {
+	font-family: Roboto-Thin;
+	font-size: 3em;
+}
+
+h5 {
+	font-family: Roboto-Medium;
+	font-size: 20px;
+}
+
+h6 {
+	font-family: Roboto-Medium;
+	font-size: 16px;
+}
+
+.accordion-wrap {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+    background-color: #F5F3F3;
+
+    border-radius: 0px 12px 12px 0px;
+    border: 0px solid #000;
+
+/* background: #FFF; */
+
+/* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); */
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) !important;
+	
+	a {
+		color: #000;
+		text-decoration: none;
+		
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	
+	.accordion {
+	position: relative;
+	/* border-top: 1px solid #fff; */
+	
+		/* &:last-child {
+			border-bottom: 1px solid #fff;
+		} */
+		
+		.teaser {
+            font-size: 10px;
+            padding-left: 2%;
+            padding-right: 2%;
+
+
+			.title {
+                padding-left: 2%;
+                padding-right: 2%;
+
+			}
+			
+			@media (max-width: 990px) {
+				flex-direction: column;
+			}
+		}
+		
+		.content {
+			padding: 0 120px 30px 200px;
+
+			@media (max-width: 1200px) {
+				padding: 0 120px 30px 0;
+			}
+		}
+
+
+		}
+		
+	}
+
+.tt {
+    color: #F5F3F3;
+}
+@media only screen and (max-width: 600px) {
+    form {
+        width: 100% !important;
+    }
+  }
+
+ /* card */
+ 

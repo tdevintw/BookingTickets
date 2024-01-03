@@ -172,7 +172,7 @@
         </div>
     </section>
     <?php require "includes/footer.php"; ?>
-
+    
     <script>
     const swiper = new Swiper('.swiper', {
         // Optional parameters

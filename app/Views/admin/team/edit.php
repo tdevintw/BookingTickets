@@ -86,14 +86,14 @@ $team = $team[0];
                     }
                     ?>
 
-                    <!-- Team photo -->
+                    <!-- Team image -->
                     <div class="mt-4">
-                        <label for="photo" class="block text-gray-600 text-sm font-medium mb-2">Team photo</label>
-                        <input type="file" id="photo" name="photo" class="w-full px-3 py-2 border border-slate-400 rounded-md focus:outline-none focus:border-blue-500">
+                        <label for="image" class="block text-gray-600 text-sm font-medium mb-2">Team image</label>
+                        <input type="file" id="image" name="image" class="w-full px-3 py-2 border border-slate-400 rounded-md focus:outline-none focus:border-blue-500">
                     </div>
                     <?php
-                    if (isset($_SESSION['errors']["photo"])) {
-                        foreach ($_SESSION['errors']["photo"] as $error) {
+                    if (isset($_SESSION['errors']["image"])) {
+                        foreach ($_SESSION['errors']["image"] as $error) {
                     ?>
                             <p class="text-red-600 text-sm m-0"><?= $error ?></p>
                     <?php
@@ -104,7 +104,7 @@ $team = $team[0];
 
                     <input type="hidden" name="id" id="id" value="<?= $team['id'] ?>">
                     <input type="hidden" name="flag_src" id="flag_src" value="<?= $team['flag_src'] ?>">
-                    <input type="hidden" name="photo_src" id="photo_src" value="<?= $team['photo_src'] ?>">
+                    <input type="hidden" name="image_src" id="image_src" value="<?= $team['image_src'] ?>">
                     <!-- Submit Button -->
                     <div class="flex flex-row justify-center">
                         <button type="submit" class="bg-blue-500 text-white px-4 py-2 mt-4 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800">

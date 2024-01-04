@@ -94,14 +94,14 @@ session_start();
                     }
                     ?>
 
-                    <!-- Team photo -->
+                    <!-- Team image -->
                     <div class="mt-4">
-                        <label for="photo" class="block text-gray-600 text-sm font-medium mb-2">Team photo</label>
-                        <input type="file" id="photo" name="photo" class="w-full px-3 py-2 border border-slate-400 rounded-md focus:outline-none focus:border-blue-500" required>
+                        <label for="image" class="block text-gray-600 text-sm font-medium mb-2">Team image</label>
+                        <input type="file" id="image" name="image" class="w-full px-3 py-2 border border-slate-400 rounded-md focus:outline-none focus:border-blue-500" required>
                     </div>
                     <?php
-                    if (isset($_SESSION['errors']["photo"])) {
-                        foreach ($_SESSION['errors']["photo"] as $error) {
+                    if (isset($_SESSION['errors']["image"])) {
+                        foreach ($_SESSION['errors']["image"] as $error) {
                     ?>
                             <p class="text-red-600 text-sm m-0"><?= $error ?></p>
                     <?php

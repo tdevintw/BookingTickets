@@ -26,14 +26,14 @@ class TeamController extends Controller
             $name = $_POST['name'];
             $coach = $_POST['coach'];
             $flag = $_FILES['flag'];
-            $photo = $_FILES['photo'];
+            $image = $_FILES['image'];
 
             // Validation
             $data = [
                 'name' => $name,
                 'coach' => $coach,
                 'flag' => $flag,
-                'photo' => $photo,
+                'image' => $image,
             ];
 
             $validator = new Validator($data);
@@ -42,7 +42,7 @@ class TeamController extends Controller
                 'name' => 'required|name',
                 'coach' => 'required|name',
                 'flag' => 'required|file',
-                'photo' => 'required|file',
+                'image' => 'required|file',
             ];
 
             $validator->validate($rules);
@@ -54,19 +54,19 @@ class TeamController extends Controller
                 header('location:' . $_SERVER['HTTP_REFERER']);
                 return;
             }
-            // store photo
-            $photoName = $photo['name'];
-            $photoTmpName = $photo['tmp_name'];
-            $photoType = strtolower(pathinfo($photoName, PATHINFO_EXTENSION));
+            // store image
+            $imageName = $image['name'];
+            $imageTmpName = $image['tmp_name'];
+            $imageType = strtolower(pathinfo($imageName, PATHINFO_EXTENSION));
 
-            $newPhotoName = $name . 'Team.'  . $photoType;
+            $newImageName = $name . 'Team.'  . $imageType;
 
-            $photoUploadFolder = "public/images/teams/";
+            $imageUploadFolder = "public/images/teams/";
 
-            $photoDestination = $photoUploadFolder . $newPhotoName;
-            move_uploaded_file($photoTmpName,  $photoDestination);
+            $imageDestination = $imageUploadFolder . $newImageName;
+            move_uploaded_file($imageTmpName,  $imageDestination);
 
-            // store photo
+            // store image
             $flagName = $flag['name'];
             $flagTmpName = $flag['tmp_name'];
             $flagType = strtolower(pathinfo($flagName, PATHINFO_EXTENSION));
@@ -78,7 +78,7 @@ class TeamController extends Controller
             $flagDestination = $flagUploadFolder . $newFlagName;
             move_uploaded_file($flagTmpName,  $flagDestination);
 
-            $team = new Team($name, $coach, '/' . $flagDestination, '/' . $photoDestination);
+            $team = new Team($name, $coach, '/' . $flagDestination, '/' . $imageDestination);
             if ($team->save()) {
                 session_start();
                 $_SESSION['success']  = "Team created successfully.";
@@ -107,11 +107,11 @@ class TeamController extends Controller
         if (isset($_POST)) {
             $id = $_POST['id'];
             $flag_src = $_POST['flag_src'];
-            $photo_src = $_POST['photo_src'];
+            $image_src = $_POST['image_src'];
             $name = $_POST['name'];
             $coach = $_POST['coach'];
             $flag = null;
-            $photo = null;
+            $image = null;
 
 
             // Validation
@@ -131,10 +131,10 @@ class TeamController extends Controller
                 $rules['flag'] = 'required|file';
             }
 
-            if (isset($_FILES['photo']) && $_FILES['photo']['error'] !== UPLOAD_ERR_NO_FILE) {
-                $photo = $_FILES['photo'];
-                $data['photo'] = $photo;
-                $rules['photo'] = 'required|file';
+            if (isset($_FILES['image']) && $_FILES['image']['error'] !== UPLOAD_ERR_NO_FILE) {
+                $image = $_FILES['image'];
+                $data['image'] = $image;
+                $rules['image'] = 'required|file';
             }
 
             $validator = new Validator($data);
@@ -150,25 +150,25 @@ class TeamController extends Controller
                 return;
             }
 
-            // store photo
+            // store image
             $newData = [
                 'name' => $name,
                 'coach' => $coach
             ];
 
-            if ($photo) {
-                unlink('.' . $photo_src);
-                $photoName = $photo['name'];
-                $photoTmpName = $photo['tmp_name'];
-                $photoType = strtolower(pathinfo($photoName, PATHINFO_EXTENSION));
+            if ($image) {
+                unlink('.' . $image_src);
+                $imageName = $image['name'];
+                $imageTmpName = $image['tmp_name'];
+                $imageType = strtolower(pathinfo($imageName, PATHINFO_EXTENSION));
 
-                $newPhotoName = $name . 'Team.'  . $photoType;
+                $newImageName = $name . 'Team.'  . $imageType;
 
-                $photoUploadFolder = "public/images/teams/";
+                $imageUploadFolder = "public/images/teams/";
 
-                $photoDestination = $photoUploadFolder . $newPhotoName;
-                move_uploaded_file($photoTmpName,  $photoDestination);
-                $newData['photo_src'] = "/" . $photoDestination;
+                $imageDestination = $imageUploadFolder . $newImageName;
+                move_uploaded_file($imageTmpName,  $imageDestination);
+                $newData['image_src'] = "/" . $imageDestination;
             }
 
             // store flag

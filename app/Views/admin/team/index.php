@@ -47,8 +47,6 @@ session_start();
             ?>
             <div class="flex flex-col w-full overflow-y-scroll max-h-[80vh]">
 
-                <!-- Alert request message  -->
-
                 <!-- Table -->
                 <table class="table-auto w-full text-sm whitespace-no-wrap border-spacing-2 px-2">
                     <thead class="">
@@ -93,7 +91,7 @@ session_start();
 
                                 <td class="p-1 border-r border-white">
                                     <div class="w-40 m-auto">
-                                        <img class="rounded-md" src="<?= $_ENV['APP_URL'] . $team["photo_src"] ?>" alt="team">
+                                        <img class="rounded-md" src="<?= $_ENV['APP_URL'] . $team["image_src"] ?>" alt="team">
                                     </div>
                                 </td>
 

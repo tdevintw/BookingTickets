@@ -12,12 +12,12 @@ use core\Validator;
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="public\assets\css\c_au.css" rel="stylesheet" >
+    <link href="../../../public/assets/css/c_au.css" rel="stylesheet" >
     <title>Login Form</title>
   </head>
   <body>
         <div class="container container-fluid">
-            <form class="mx-auto" method="post" >
+            <form class="mx-auto" method="post" action="./Signin" >
                 <h4 class="text-center">Login</h4>
                 <div class="mb-3 mt-5">
                   <label for="exampleInputEmail1" class="form-label">Email</label>

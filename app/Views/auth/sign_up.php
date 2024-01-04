@@ -9,14 +9,14 @@
 ?>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="public\assets\css\c_au.css" rel="stylesheet" >
+    <link href="../../../public/assets/css/c_au.css" rel="stylesheet" >
     <title>Sugn_up Form</title>
   </head>
   <body>
 
   
         <div class="container-fluid">
-            <form class="mx-auto" id="regester-form" method="post" >
+            <form class="mx-auto" id="regester-form" method="post" action="./Signup" >
                 <h4 class="text-center">Login</h4>
                 <div class="mb-3 mt-5">
                   <label for="name_inp" class="form-label">Your Name</label>

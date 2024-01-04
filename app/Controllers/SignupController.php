@@ -13,7 +13,7 @@ class SignupController
          
             $name = $_POST["fullName"];
             $email = $_POST["email"];
-            $password = password_hash($_POST["MotDePasse"], PASSWORD_DEFAULT); // Hash the password
+            $password = password_hash($_POST["password"], PASSWORD_DEFAULT); // Hash the password
 
             // Create an instance of SignupModel
             $signupModel = new SignupModel();

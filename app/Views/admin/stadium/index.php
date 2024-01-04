@@ -32,8 +32,8 @@ session_start();
 
         <div class="w-5/6">
             <div class="flex flex-row items-center py-1 w-full px-2">
-                <h3 class="mr-auto text-2xl font-bold text-cyan-800">List of Teams</h3>
-                <a class="cursor-pointer text-white font-bold bg-blue-600 rounded-xl p-2 h-10 hover:bg-blue-600" href="<?= $_ENV['APP_URL'] . '/admin/team/create' ?>">
+                <h3 class="mr-auto text-2xl font-bold text-cyan-800">List of Stadiums</h3>
+                <a class="cursor-pointer text-white font-bold bg-blue-600 rounded-xl p-2 h-10 hover:bg-blue-600" href="<?= $_ENV['APP_URL'] . '/admin/stadium/create' ?>">
                     + Add Stadium
                 </a>
             </div>
@@ -46,8 +46,6 @@ session_start();
             }
             ?>
             <div class="flex flex-col w-full overflow-y-scroll max-h-[80vh]">
-
-                <!-- Alert request message  -->
 
                 <!-- Table -->
                 <table class="table-auto w-full text-sm whitespace-no-wrap border-spacing-2 px-2">
@@ -75,12 +73,10 @@ session_start();
                                     </a>
                                 </td>
 
-                                <td class="p-1 border-r border-white">
-                                    <div class="flex items-center gap-3">
-                                        <div class="w-12">
-                                            <img class="rounded-md" src="<? $stadium['name'] ?>" alt="<?= $stadium['name'] ?>">
-                                        </div>
-                                    </div>
+                                <td class="p-1 border-r border-white w-fit">
+                                    <p class="font-bold">
+                                        <?= $stadium['name'] ?>
+                                    </p>
                                 </td>
 
                                 <td class="p-1 border-r border-white">
@@ -88,7 +84,7 @@ session_start();
                                         <?= $stadium['location'] ?>
                                     </p>
                                 </td>
-                                
+
                                 <td class="p-1 border-r border-white">
                                     <p class="font-bold">
                                         <?= $stadium['capacity'] ?>

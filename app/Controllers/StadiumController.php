@@ -20,87 +20,76 @@ class StadiumController extends Controller
         $this->render('admin/stadium/create');
     }
 
-    // public function store()
-    // {
-    //     if (isset($_POST) && $_FILES) {
-    //         $name = $_POST['name'];
-    //         $location = $_POST['location'];
-    //         $capacity = $_POST['capacity'];
-    //         $photo = $_FILES['photo'];
+    public function store()
+    {
+        if (isset($_POST) && $_FILES) {
+            $name = $_POST['name'];
+            $location = $_POST['location'];
+            $capacity = $_POST['capacity'];
+            $image = $_FILES['image'];
 
-    //         // Validation
-    //         $data = [
-    //             'name' => $name,
-    //             'location' => $location,
-    //             'capacity' => $capacity,
-    //             'photo' => $photo,
-    //         ];
+            // Validation
+            $data = [
+                'name' => $name,
+                'location' => $location,
+                'capacity' => $capacity,
+                'image' => $image,
+            ];
 
-    //         $validator = new Validator($data);
+            $validator = new Validator($data);
 
-    //         $rules = [
-    //             'name' => 'required|name',
-    //             'adress' => 'required|name',
-    //             'flag' => 'required|file',
-    //             'photo' => 'required|file',
-    //         ];
+            $rules = [
+                'name' => 'required|name',
+                'location' => 'required|adress',
+                'capacity' => 'required|file',
+                'image' => 'required|file',
+            ];
 
-    //         $validator->validate($rules);
+            $validator->validate($rules);
 
-    //         if ($validator->fails()) {
-    //             $errors = $validator->errors();
-    //             session_start();
-    //             $_SESSION['errors'] = $errors;
-    //             header('location:' . $_SERVER['HTTP_REFERER']);
-    //             return;
-    //         }
-    //         // store photo
-    //         $photoName = $photo['name'];
-    //         $photoTmpName = $photo['tmp_name'];
-    //         $photoType = strtolower(pathinfo($photoName, PATHINFO_EXTENSION));
+            if ($validator->fails()) {
+                $errors = $validator->errors();
+                session_start();
+                $_SESSION['errors'] = $errors;
+                header('location:' . $_SERVER['HTTP_REFERER']);
+                return;
+            }
+            // here C stadium
+            // store image
+            $imageName = $image['name'];
+            $imageTmpName = $image['tmp_name'];
+            $imageType = strtolower(pathinfo($imageName, PATHINFO_EXTENSION));
 
-    //         $newPhotoName = $name . 'Team.'  . $photoType;
+            $newImageName = $name . 'Team.'  . $imageType;
 
-    //         $photoUploadFolder = "public/images/teams/";
+            $imageUploadFolder = "public/images/teams/";
 
-    //         $photoDestination = $photoUploadFolder . $newPhotoName;
-    //         move_uploaded_file($photoTmpName,  $photoDestination);
+            $imageDestination = $imageUploadFolder . $newImageName;
+            move_uploaded_file($imageTmpName,  $imageDestination);
 
-    //         // store photo
-    //         $flagName = $flag['name'];
-    //         $flagTmpName = $flag['tmp_name'];
-    //         $flagType = strtolower(pathinfo($flagName, PATHINFO_EXTENSION));
+            $stadium = new Stadium($name, $coach, '/' . $flagDestination, '/' . $imageDestination);
+            if ($stadium->save()) {
+                session_start();
+                $_SESSION['success']  = "Team created successfully.";
+                header('location:' . $_SERVER['HTTP_REFERER']);
+                return;
+            }
 
-    //         $newFlagName = $name . 'Flag.'  . $flagType;
+            session_start();
+            $_SESSION['errors'] = "Error withing creating the team !!";
+            header('location:' . $_SERVER['HTTP_REFERER']);
+            return;
+        }
+    }
 
-    //         $flagUploadFolder = "public/images/flags/";
-
-    //         $flagDestination = $flagUploadFolder . $newFlagName;
-    //         move_uploaded_file($flagTmpName,  $flagDestination);
-
-    //         $team = new Team($name, $coach, '/' . $flagDestination, '/' . $photoDestination);
-    //         if ($team->save()) {
-    //             session_start();
-    //             $_SESSION['success']  = "Team created successfully.";
-    //             header('location:' . $_SERVER['HTTP_REFERER']);
-    //             return;
-    //         }
-
-    //         session_start();
-    //         $_SESSION['errors'] = "Error withing creating the team !!";
-    //         header('location:' . $_SERVER['HTTP_REFERER']);
-    //         return;
-    //     }
-    // }
-
-    // public function edit()
-    // {
-    //     if (isset($_POST['id'])) {
-    //         $id = $_POST['id'];
-    //         $team = Team::select($id);
-    //         $this->render("admin/team/edit", ['team' => $team]);
-    //     }
-    // }
+    public function edit()
+    {
+        if (isset($_POST['id'])) {
+            $id = $_POST['id'];
+            $stadium = Stadium::select($id);
+            $this->render("admin/stadium/edit", ['stadium' => $stadium]);
+        }
+    }
 
     // public function update()
     // {
@@ -200,10 +189,10 @@ class StadiumController extends Controller
     //     }
     // }
 
-    // public function delete(int $id)
-    // {
-    //     if (Team::delete($id)) {
-    //         header("Location:" . $_SERVER['HTTP_REFERER']);
-    //     }
-    // }
+    public function delete(int $id)
+    {
+        if (isset($_POST['id']) && Stadium::delete($_POST['id'])) {
+            header("Location:" . $_SERVER['HTTP_REFERER']);
+        }
+    }
 }

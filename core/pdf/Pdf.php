@@ -2,7 +2,6 @@
 require('fpdf186/fpdf.php');
 include('C:\Users\Youcode\Desktop\LARAGON\www\BookingTickets\core\QR\phpqrcode\phpqrcode\qrlib.php'); // Include the QR Code library
 
-
     class Pdf extends FPDF {
         // function GradientRect($x, $y, $w, $h, $color1, $color2) {
         //     // Calculate the gradient colors
@@ -24,7 +23,7 @@ include('C:\Users\Youcode\Desktop\LARAGON\www\BookingTickets\core\QR\phpqrcode\p
         //         $this->Rect($x, $y + $i, $w, 1, 'F');
         //     }
         // }
-
+        
         function Header(){
 
             $this->AddFont('ComforterBrush', '', 'ComforterBrush-Regular.php');
@@ -32,20 +31,13 @@ include('C:\Users\Youcode\Desktop\LARAGON\www\BookingTickets\core\QR\phpqrcode\p
             $this->AddFont('RubikVinyl', '', 'RubikVinyl-Regular.php');
             $this->AddFont('DotGothic16', '', 'DotGothic16-Regular.php');
 
-            // $this -> SetFillColor(0, 128, 0);
-            // $this -> Rect(0,0, $this -> GetPageWidth(),12,'F');
             $this->Image("../../public/images/matchTicket.png",0,0, $this -> GetPageWidth(),$this -> GetPageHeight()); 
-
             $this->Image("../../public/images/pngegg.png", 0, 0, $this -> GetPageWidth(),$this -> GetPageHeight());
-
-
-            
 
             $this->Image("../../public/images/gg.png", 2, 2, 15, 10); 
             $this->SetY(8);
-            // $this->Image("../../public/images/bal.png", -6, 20, 20, 20);
+       
             $this->Image("../../public/images/playerTT.png", 160, 15, 70, 70);
-
 
             $this->SetFont('ComforterBrush', '', 30);
             
@@ -55,7 +47,6 @@ include('C:\Users\Youcode\Desktop\LARAGON\www\BookingTickets\core\QR\phpqrcode\p
 
             $this->Cell(0, 8, 'Await  you', 0, 1, 'C');
 
-        
             $this->SetFont('Arial', 'B', 10);
             $this->SetTextColor(255, 255, 255);
 
@@ -67,7 +58,6 @@ include('C:\Users\Youcode\Desktop\LARAGON\www\BookingTickets\core\QR\phpqrcode\p
 
             $this->SetXY(88, 34);
             $this->Cell(0, 8, 'Date: January 1, 2024', 0, 1, 'G');
-
         
             $this->SetXY(88, 40);
             
@@ -84,8 +74,9 @@ include('C:\Users\Youcode\Desktop\LARAGON\www\BookingTickets\core\QR\phpqrcode\p
 
             $this->SetXY(88, 64);
             $this->Cell(0, 8, 'Price : 25$', 0, 1, 'G');
-                    // Generate QR code
-        $lien = 'https://www.243tech.com';
+
+        // Generate QR code
+        $lien = 'https://www.facebook.com';
         $qrCodeImagePath = 'image-qrcode.png';
         QRcode::png($lien, $qrCodeImagePath);
 
@@ -97,5 +88,5 @@ include('C:\Users\Youcode\Desktop\LARAGON\www\BookingTickets\core\QR\phpqrcode\p
     $pdf = new Pdf();
 $pdf->SetAutoPageBreak(true, 0);
 $pdf->AddPage('L', array($pdf->GetPageWidth(), 80));
-$pdf->SetFont('Arial', '', 12);
+// $pdf->SetFont('Arial', '', 12);
 $pdf->Output();

@@ -1,6 +1,7 @@
 <?php
 
 use app\Controllers\Admin\AdminController;
+use app\Controllers\Admin\MatcheController;
 use app\Controllers\Admin\TeamController as AdminTeamController;
 use app\Controllers\ClientController;
 use app\Controllers\HomeController;
@@ -11,7 +12,7 @@ $router = new Router();
 
 // Home
 $router->addRoute('/', HomeController::class, 'index');
-$router->addRoute('/matchs', HomeController::class, 'matchs');
+$router->addRoute('/matches', MatcheController::class, 'index');
 $router->addRoute('/form', HomeController::class, 'form');
 $router->addRoute('/about', HomeController::class, 'about');
 

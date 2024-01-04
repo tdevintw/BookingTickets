@@ -77,7 +77,7 @@ session_start();
                                 <td class="p-1 border-r border-white">
                                     <div class="flex items-center gap-3">
                                         <div class="w-12">
-                                            <img class="rounded-md" src="<?= $_ENV['APP_URL'] . $team['flag_src'] ?>" alt="">
+                                            <img class="rounded-md" src="<?= $_ENV['APP_URL'] . $team['flag_src'] ?>" alt="flag">
                                         </div>
                                         <p class="text-xl font-bold">
                                             <?= $team['name'] ?>
@@ -93,13 +93,13 @@ session_start();
 
                                 <td class="p-1 border-r border-white">
                                     <div class="w-40 m-auto">
-                                        <img class="rounded-md" src="<?= $_ENV['APP_URL'] . $team["photo_src"] ?>" alt="ikhan">
+                                        <img class="rounded-md" src="<?= $_ENV['APP_URL'] . $team["photo_src"] ?>" alt="team">
                                     </div>
                                 </td>
 
                                 <td class="text-right border-r border-white">
-                                    <form class="text-center" action="<?= $_ENV['APP_URL'] . "/admin/team/delete/" . $team['id'] ?>" method="POST">
-
+                                    <form class="text-center" action="<?= $_ENV['APP_URL'] . "/admin/team/delete" ?>" method="POST">
+                                        <input type="hidden" name="id" id="id" value="<?= $team['id'] ?>">
                                         <button class="hover:bg-red-500 hover:text-white text-red-500 border border-red-500 rounded-md p-2" onclick="return confirmDelete()">
                                             Delete
                                         </button>

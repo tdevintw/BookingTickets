@@ -200,9 +200,9 @@ class TeamController extends Controller
         }
     }
 
-    public function delete(int $id)
+    public function delete()
     {
-        if (Team::delete($id)) {
+        if (isset($_POST['id']) && Team::delete($_POST['id'])) {
             header("Location:" . $_SERVER['HTTP_REFERER']);
         }
     }

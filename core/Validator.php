@@ -125,6 +125,16 @@ class Validator
         }
     }
 
+    protected function validateAddress($field)
+    {
+        if (empty($this->data[$field])) {
+            $this->addError($field, 'The ' . $field . ' field is required.');
+        } elseif (!preg_match("/^[a-zA-Z0-9\s,'-]+$/", $this->data[$field])) {
+            $this->addError($field, 'Invalid characters in the ' . $field . ' field.');
+        }
+    }
+
+
     protected function addError($field, $message)
     {
         $this->errors[$field][] = $message;

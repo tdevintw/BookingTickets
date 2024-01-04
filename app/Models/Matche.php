@@ -1,5 +1,6 @@
 <?php
 namespace app\Models;
+
 use app\Models\Model;
 
 class Matche extends Model
@@ -14,7 +15,8 @@ class Matche extends Model
     private $price;
 
 
-    public function __construct($team1_id, $team2_id, $date, $stadium_id, $price) {
+    public function __construct($team1_id, $team2_id, $date, $stadium_id, $price)
+    {
         $this->$team1_id = $team1_id;
         $this->$team2_id = $team2_id;
         $this->$date = $date;
@@ -22,12 +24,17 @@ class Matche extends Model
         $this->$price = $price;
     }
 
-    
-    public static function select(){
+
+    public static function select($id = null)
+    {
+        if ($id)
+            return parent::selectRecords("matches", "*", "id = $id");
         return parent::selectRecords("matches");
+
     }
 
-    public static function delete($id){
+    public static function delete($id)
+    {
         return parent::deleteRecord('matches', $id);
     }
 }

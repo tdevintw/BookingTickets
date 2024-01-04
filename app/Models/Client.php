@@ -13,7 +13,9 @@ class Client extends Model
 
     public static function select($where = null)
     {
-        return Model::selectRecords("clients", '*', $where);
+        if ($where === null)
+            return Model::selectRecords("clients");
+        return Model::selectRecords('clients', '*', $where);
     }
 
     public static function delete($id)

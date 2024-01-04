@@ -12,13 +12,21 @@ class MatcheController extends Controller
     public function index()
     {
         $matches = Matche::select();
-        foreach($matches as &$match){
+        foreach ($matches as &$match) {
             $match['team1'] = Team::select($match['team1_id'])[0];
             $match['team2'] = Team::select($match['team2_id'])[0];
             $match['stadium'] = Stadium::select($match['stadium_id'])[0];
         }
         // Get match infos 
         $this->render('matche/index', ['matches' => $matches]);
+    }
+
+    public static function getMatcheInfos($matche)
+    {
+        $matche['team1'] = Team::select($matche['team1_id'])[0];
+        $matche['team2'] = Team::select($matche['team2_id'])[0];
+        $matche['stadium'] = Stadium::select($matche['stadium_id'])[0];
+        return $matche;
     }
 
     public function create()

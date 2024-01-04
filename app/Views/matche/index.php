@@ -125,13 +125,15 @@ foreach ($matches as $key => $match) :
     </div>
 
     <section class="container">
-        <h3 class="title">Upcoming Match</h3>
+        <h3 class="title mt-2">Upcoming Match</h3>
         <hr class="" style="width: 20%;">
 
             <div class="row">
-            <?php
-        foreach($matches as $match) : 
+        <?php
+        foreach($matches as $key => $match) : 
+            if ($key >= 2) :
         ?>
+        
                 <div class=" col-md-6 text-center">
                     <div class="match-title card text-dark card-has-bg click-col mb-2"
                         style="background-image:url('./public/images/match.jpg'); ">
@@ -154,13 +156,21 @@ foreach ($matches as $key => $match) :
                                         <p class="name mt-0 text-center"><?= $match['team2']['name'] ?></p>
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-success mt-3 py-3 px-5 fs-5" style=""><a href=""
-                                        class="reserve">Reserve</a></button>
+                                <form  
+                                        method="POST"
+                                        action="./form">
+                                    <input type="hidden" name="matche_id" value="<?= $match['id'] ?>">
+                                    <button class="btn btn-success mt-3 py-3 px-5 fs-5" href="$_ENV["APP_URL"] . form"
+                                        class="reserve">Reserve
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
-        <?php endforeach; ?>
+        <?php 
+        endif;
+        endforeach; ?>
 
         </div>
 

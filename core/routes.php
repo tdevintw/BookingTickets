@@ -1,19 +1,28 @@
 <?php
 
 use app\Controllers\Admin\AdminController;
+use app\Controllers\Admin\MatcheController;
 use app\Controllers\Admin\TeamController as AdminTeamController;
 use app\Controllers\ClientController;
 use app\Controllers\HomeController;
 use app\Controllers\TeamController;
+use app\Controllers\TicketController;
 use core\Router;
 
 $router = new Router();
 
-// Home
-$router->addRoute('/', HomeController::class, 'index');
-$router->addRoute('/matchs', HomeController::class, 'matchs');
-$router->addRoute('/form', HomeController::class, 'form');
+// Pages
+$router->addRoute('/', HomeController::class, 'home');
 $router->addRoute('/about', HomeController::class, 'about');
+
+// Matche Managment
+$router->addRoute('/matches', MatcheController::class, 'index');
+
+
+// Ticket Managment
+$router->addRoute('/form', TicketController::class, 'form');
+$router->addRoute('/ticket/create', TicketController::class, 'create');
+// $router->addRoute('/pdf', TicketController::class, 'create');
 
 
 
@@ -26,8 +35,4 @@ $router->addRoute("/profile", ClientController::class, 'show');
 /*********** Admin routes ************/
 $router->addRoute('/admin/dashboard', AdminController::class, 'dashboard');
 
-// Team managment
-$router->addRoute('/admin/team', AdminTeamController::class, 'index');
-$router->addRoute('/admin/team/create', AdminTeamController::class, 'create');
-// $router->addRoute('/admin/team/store', AdminTeamController::class, 'create');
-$router->addRoute('/admin/team/delete', AdminTeamController::class, 'delete');
+

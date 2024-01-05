@@ -8,9 +8,9 @@ class Router
 {
     protected $routes = [];
 
-    public function addRoute($route, $controller, $action, $params = [])
+    public function addRoute($route, $controller, $action)
     {
-        $this->routes[$route] = ['controller' => $controller, 'action' => $action, 'params' => $params];
+        $this->routes[$route] = ['controller' => $controller, 'action' => $action];
     }
 
     public function dispatch($uri)

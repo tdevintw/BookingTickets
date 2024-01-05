@@ -1,10 +1,11 @@
 <?php
 namespace app\Controllers;
+use app\Models\Matche;
 
 
 class HomeController extends Controller
 {
-    public function index() {
+    public function home() {
         $this->render('home');
     }
     
@@ -13,13 +14,6 @@ class HomeController extends Controller
         $this->render('404');
     }
 
-    public function matchs(){
-        $this->render("match/match");
-    }
-
-    public function form(){
-        $this->render("form");
-    }
     public function about(){
         $this->render("about");
     }

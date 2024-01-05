@@ -35,10 +35,10 @@
 
       <h4 class="text-center">RESERVATION FORM</h4>
 
-      <div class="d-flex flex-row mb-3 align-items-center">
+      <!-- <div class="d-flex flex-row mb-3 align-items-center">
         <label class="form-label me-4">E-tickets</label>
         <div class="text-center" style="border: 2px solid black; width:10%;">12</div>
-      </div>
+      </div> -->
 
       <div class="container w-100 col-md-6 text-center pt-8">
         <div class="match-title card text-dark card-has-bg click-col"
@@ -80,13 +80,15 @@
       <p class="info mt-3">SESSIONS DETAILS</p>
       <hr class="" style="width: 20%;">
 
-      <div class="mb-3 mt-3">
+      <!-- Multi tickets -->
+
+      <!-- <div class="mb-3 mt-3">
         <label class="titre form-label">E-tickets</label>
         <input type="number" min="1" max="5000" class="input form-control text-center" id="tickets"
           aria-describedby="E-tickets number" placeholder="E-tickets number">
         <span></span>
         <div id="error"></div>
-      </div>
+      </div> -->
 
       <input type="hidden" name="matche_id" value="<?= $matche['id']?>">
       <input type="hidden" name="stadium_id" value="<?= $matche['stadium_id']?>">

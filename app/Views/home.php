@@ -2,47 +2,66 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php require "includes/head_hf.php"; ?>
-    <link rel="stylesheet" href="../../public/assets/css/home.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-    $(function() {
-        $("#datepicker").datepicker();
-    });
-    </script>
-    <style>
-    .swiper {
-        width: 95%;
-        height: 300px;
+ <style>
+    @media screen and (max-width: 900px) {
+        div.search-section {
+            width: 90%;
+        }
+    }
+    @media screen and (max-width: 740px) {
+        h1.hero-header {
+            font-size: 2.5rem;
+        }
     }
 
-    .swiper-button-next,
-    .swiper-button-prev {
-        background-color: orange;
-        color: white;
-        padding: 30px;
-        height: 10px;
-        border-radius: 10px;
-    }
+    .hero-header {
 
-    div.swiper-button-next::after,
-    div.swiper-button-prev::after {
-        color: white;
-        margin: 10px;
+        color: #ffffff;
+        font-family: Roboto;
+        font-size: 5rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top: 200px;
+        text-shadow: rgb(0, 0, 0) 1px 0 10px;
 
     }
 
-    .swiper-slide {
+    .main-hero {
         display: flex;
-        flex-direction: column;
         justify-content: center;
+        background-image: url(../../public/images/hero_image.png);
+        background-repeat: no-repeat;
+        background-color: #cccccc;
+        height: 500px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+
+    .search-section {
+        border: 1px solid black;
+        margin-top: 20px;
+        width: 40%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+
+    }
+
+    .search-section input {
+        width: 40%;
+        border: 1px solid black;
     }
     </style>
 </head>
@@ -55,7 +74,7 @@
         <div class="main-hero">
             <h1 class="hero-header">Exciting moments<br>await You</h1>
         </div>
-        <div style="display:flex;justify-content:center;">
+        <div id="container_search" style="display:flex;justify-content:center;">
             <div class="search-section">
                 <input name="search" type="text" placeholder="search...">
 
@@ -73,14 +92,15 @@
                     All</button>
             </div>
             <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:50px;margin-top:50px;">
+                <?php foreach ($teams as $team): ?>
                 <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="../../public/images/Morocco.jpeg" alt="Card image cap">
+                    <img class="card-img-top" src="<?= $_ENV["APP_URL"] . $team['team_image'] ?>" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">Morocco Nationale Team</h5>
+                        <h5 class="card-title"><?= $_ENV["APP_URL"] . $team['team_name'] ?></h5>
                         <p>Group F</p>
                         <div style="display:flex;">
                             <img src="../../public/images/location.svg" style="height:30px;">
-                            <h4>Morocco</h4>
+                            <h4><?= $_ENV["APP_URL"] . $team['team_name'] ?></h4>
                         </div>
                         <div style="text-align:center;margin-top:10px;">
                             <a href="#" style="background-color:orange;color:white;font-weight:bold;" class="btn">More
@@ -88,66 +108,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="../../public/images/Morocco.jpeg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Morocco Nationale Team</h5>
-                        <p>Group F</p>
-                        <div style="display:flex;">
-                            <img src="../../public/images/location.svg" style="height:30px;">
-                            <h4>Morocco</h4>
-                        </div>
-                        <div style="text-align:center;margin-top:10px;">
-                            <a href="#" style="background-color:orange;color:white;font-weight:bold;" class="btn">More
-                                Infos</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="../../public/images/Morocco.jpeg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Morocco Nationale Team</h5>
-                        <p>Group F</p>
-                        <div style="display:flex;">
-                            <img src="../../public/images/location.svg" style="height:30px;">
-                            <h4>Morocco</h4>
-                        </div>
-                        <div style="text-align:center;margin-top:10px;">
-                            <a href="#" style="background-color:orange;color:white;font-weight:bold;" class="btn">More
-                                Infos</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="../../public/images/Morocco.jpeg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Morocco Nationale Team</h5>
-                        <p>Group F</p>
-                        <div style="display:flex;">
-                            <img src="../../public/images/location.svg" style="height:30px;">
-                            <h4>Morocco</h4>
-                        </div>
-                        <div style="text-align:center;margin-top:10px;">
-                            <a href="#" style="background-color:orange;color:white;font-weight:bold;" class="btn">More
-                                Infos</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="../../public/images/Morocco.jpeg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Morocco Nationale Team</h5>
-                        <p>Group F</p>
-                        <div style="display:flex;">
-                            <img src="../../public/images/location.svg" style="height:30px;">
-                            <h4>Morocco</h4>
-                        </div>
-                        <div style="text-align:center;margin-top:10px;">
-                            <a href="#" style="background-color:orange;color:white;font-weight:bold;" class="btn">More
-                                Infos</a>
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
         <div class="stadiums" style="margin-top:50px;">
@@ -169,31 +130,12 @@
                         </div>
                     </div>
                 </div>
-        </div>
+            </div>
     </section>
     <?php require "includes/footer.php"; ?>
-    
     <script>
-    const swiper = new Swiper('.swiper', {
-        // Optional parameters
-        direction: 'horizontal',
-        loop: true,
-
-        // If we need pagination
-        pagination: {
-            el: '.swiper-pagination',
-        },
-
-        // Navigation arrows
-        navigation: {
-            nextEl: '.next',
-            prevEl: '.prev',
-        },
-
-        // And if we need scrollbar
-        scrollbar: {
-            el: '.swiper-scrollbar',
-        },
+    $(function() {
+        $("#datepicker").datepicker();
     });
     </script>
 </body>

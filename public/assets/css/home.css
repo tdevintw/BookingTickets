@@ -1,6 +1,6 @@
 .hero-header {
 
-    color: #FAFAFA;
+    color: #ffffff;
     font-family: Roboto;
     font-size: 2.5rem;
     font-style: normal;
@@ -8,7 +8,7 @@
     line-height: normal;
     margin-top: 200px;
     text-shadow: rgb(0, 0, 0) 1px 0 10px;
-    
+                                                         
 }
 
 .main-hero {
@@ -25,10 +25,9 @@
 }
 
 .search-section {
-    border: 4px solid black;
+    border: 1px solid black;
     margin-top: 20px;
-    border-radius: 10px;
-    width: 90%;
+    width: 50%;
     padding-top: 10px;
     padding-bottom: 10px;
     text-align:center;
@@ -42,3 +41,4 @@
  width:40%;
  border-radius:10px;
 }
+

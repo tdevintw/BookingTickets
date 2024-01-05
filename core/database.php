@@ -2,9 +2,9 @@
 
 return [
     'mysql' => [
-        'host' => $_ENV['DB_HOST'],
-        'username' => $_ENV['DB_USERNAME'],
-        'password' => $_ENV['DB_PASSWORD'],
-        'dbname' => $_ENV['DB_NAME'],
+        'host' => $_ENV['localhost'],
+        'username' => $_ENV['stadiumstream_db'],
+        'password' => $_ENV[''],
+        'dbname' => $_ENV['root'],
     ],
 ];

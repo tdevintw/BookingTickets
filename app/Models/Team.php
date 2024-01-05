@@ -1,7 +1,7 @@
 <?php
 namespace app\Models;
 
-class Team extends Model{
+class Teams extends Model{
     public $name;
     public $coach;
     public $captain;

@@ -1,8 +1,8 @@
 <header>
-        <nav class="navbar navbar-expand-lg">
-            <div class=" container">
+    <nav class="navbar navbar-expand-lg">
+        <div class=" container">
             <div style="display:flex; align-items:center;">
-                <a class="navbar-brand" href="#"><img src="./public/images/logo.png" alt="logo"></a>
+                <a class="navbar-brand" href="#"><img src="../../public/images/logo.png" alt="logo"></a>
                 <span>Stadium Stream</span>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -19,7 +19,7 @@
                         <a class="nav-link" href="about.php">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="search.php">Search</a>
+                        <a class="nav-link active" aria-current="page" href="reserve.php">reserve</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.php">Contact</a>
@@ -31,6 +31,6 @@
                         class='btn btn-primary'>Connect</a>
                 </form>
             </div>
-            </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>

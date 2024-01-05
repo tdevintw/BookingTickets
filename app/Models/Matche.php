@@ -17,6 +17,7 @@ class Matche extends Model
 
     public function __construct($team1_id, $team2_id, $date, $stadium_id, $price)
     {
+        // $this -> $ticket = $ticket;
         $this->$team1_id = $team1_id;
         $this->$team2_id = $team2_id;
         $this->$date = $date;

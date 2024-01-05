@@ -53,8 +53,9 @@ class Model
                 $i++;
             }
             $stmt->execute();
+            $lastId = self::$pdo->lastInsertId();
             self::deconnect();
-            return true;
+            return $lastId;
         } catch (\PDOException $e) {
             self::deconnect();
             return false;

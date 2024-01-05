@@ -21,9 +21,8 @@ $router->addRoute('/matches', MatcheController::class, 'index');
 
 // Ticket Managment
 $router->addRoute('/form', TicketController::class, 'form');
-$router->addRoute('/ticket/create', TicketController::class, 'create');
-// $router->addRoute('/pdf', TicketController::class, 'create');
 
+$router->addRoute('/ticket/create', TicketController::class, 'create');
 
 
 // Team resource

@@ -75,9 +75,14 @@ foreach ($matches as $key => $match) :
                             </div>
                         </div>
 
-                        <button type="button" class="btn btn-success mt-3 py-3 px-5 fs-5">
-                            <a href="" class="reserve">Reserve</a>
-                        </button>
+                        <form  
+                                        method="POST"
+                                        action="./form">
+                                    <input type="hidden" name="matche_id" value="<?= $match['id'] ?>">
+                                    <button class="btn btn-success mt-3 py-3 px-5 fs-5" href="$_ENV["APP_URL"] . form"
+                                        class="reserve">Reserve
+                                    </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -113,9 +118,14 @@ foreach ($matches as $key => $match) :
                             </div>
                         </div>
 
-                        <button type="button" class="btn btn-success mt-3 py-3 px-5 fs-5">
-                            <a href="" class="reserve">Reserve</a>
-                        </button>
+                        <form  
+                                        method="POST"
+                                        action="./form">
+                                    <input type="hidden" name="matche_id" value="<?= $match['id'] ?>">
+                                    <button class="btn btn-success mt-3 py-3 px-5 fs-5" href="$_ENV["APP_URL"] . form"
+                                        class="reserve">Reserve
+                                    </button>
+                        </form>
                     </div>
                 </div>
             </div>

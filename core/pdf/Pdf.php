@@ -1,92 +1,97 @@
 <?php
+namespace core\pdf;
 require('fpdf186/fpdf.php');
-include('C:\Users\Youcode\Desktop\LARAGON\www\BookingTickets\core\QR\phpqrcode\phpqrcode\qrlib.php'); // Include the QR Code library
+include('core\QR\phpqrcode\phpqrcode\qrlib.php'); // Include the QR Code library
 
-    class Pdf extends FPDF {
-        // function GradientRect($x, $y, $w, $h, $color1, $color2) {
-        //     // Calculate the gradient colors
-        //     $r1 = $color1[0];
-        //     $g1 = $color1[1];
-        //     $b1 = $color1[2];
-    
-        //     $r2 = $color2[0];
-        //     $g2 = $color2[1];
-        //     $b2 = $color2[2];
-    
-        //     // Draw gradient rectangle
-        //     for ($i = 0; $i <= $h; $i++) {
-        //         $r = intval($r1 + ($r2 - $r1) * $i / $h);
-        //         $g = intval($g1 + ($g2 - $g1) * $i / $h);
-        //         $b = intval($b1 + ($b2 - $b1) * $i / $h);
-    
-        //         $this->SetFillColor($r, $g, $b);
-        //         $this->Rect($x, $y + $i, $w, 1, 'F');
-        //     }
-        // }
-        
-        function Header(){
 
-            $this->AddFont('ComforterBrush', '', 'ComforterBrush-Regular.php');
-            $this->AddFont('KaushanScript', '', 'KaushanScript-Regular.php');
-            $this->AddFont('RubikVinyl', '', 'RubikVinyl-Regular.php');
-            $this->AddFont('DotGothic16', '', 'DotGothic16-Regular.php');
+class Pdf extends \FPDF
+{
+    private $matche_date;
+    private $sdtadium_name;
+    private $team1_name;
+    private $team1_flag_src;
+    private $team2_name;
+    private $team2_flag_src;
+    private $price;
+    private $ticket_number;
 
-            $this->Image("../../public/images/matchTicket.png",0,0, $this -> GetPageWidth(),$this -> GetPageHeight()); 
-            $this->Image("../../public/images/pngegg.png", 0, 0, $this -> GetPageWidth(),$this -> GetPageHeight());
+    public function generateTicket($matche_date, $sdtadium_name, $team1_name, $team1_flag_src, $team2_name, $team2_flag_src, $price, $ticket_number){
 
-            $this->Image("../../public/images/gg.png", 2, 2, 15, 10); 
-            $this->SetY(8);
-       
-            $this->Image("../../public/images/playerTT.png", 160, 15, 70, 70);
+    }
 
-            $this->SetFont('ComforterBrush', '', 30);
-            
-            $this->SetXY(10, 10);
-            $this->Cell(0, 8, 'Exciting moments', 0, 1, 'C');
-            $this->SetFont('RubikVinyl', '', 30);
+    function LetterSpacing($text, $spacing)
+    {
+        // Séparation du texte en lettres
+        $letters = str_split($text);
 
-            $this->Cell(0, 8, 'Await  you', 0, 1, 'C');
-
-            $this->SetFont('Arial', 'B', 10);
-            $this->SetTextColor(255, 255, 255);
-
-            $this -> SetFont('DotGothic16','',15);
-            $this->SetXY(98, 27);
-            $this->Cell(0, 10, 'TICKET', 0, 1, 'G');
-        
-            $this->SetFont('Arial', '', 10);
-
-            $this->SetXY(88, 34);
-            $this->Cell(0, 8, 'Date: January 1, 2024', 0, 1, 'G');
-        
-            $this->SetXY(88, 40);
-            
-            $this->Cell(0, 8, 'Time : 00:00', 0, 1, 'G');
-        
-            $this->SetXY(88, 46);
-            $this->Cell(0, 8, 'Team A vs Team B', 0, 1, 'G');
-            
-            $this->SetXY(88, 52);
-            $this->Cell(0, 8, 'Venue : Stadium XYZ', 0, 1, 'G');
-
-            $this->SetXY(88, 58);
-            $this->Cell(0, 8, 'Ticket Number: 123456789', 0, 1, 'G');
-
-            $this->SetXY(88, 64);
-            $this->Cell(0, 8, 'Price : 25$', 0, 1, 'G');
-
-        // Generate QR code
-        $lien = 'https://www.facebook.com';
-        $qrCodeImagePath = 'image-qrcode.png';
-        QRcode::png($lien, $qrCodeImagePath);
-
-        // Add QR code image to the PDF
-        $this->Image($qrCodeImagePath, 6, 55, 20, 20); // Adjust coordinates and size as needed
+        // Affichage des lettres avec espacement
+        foreach ($letters as $letter) {
+            $this->Cell(5 + $spacing, 0, $letter, 0, 0, 'C');
         }
     }
 
-    $pdf = new Pdf();
-$pdf->SetAutoPageBreak(true, 0);
-$pdf->AddPage('L', array($pdf->GetPageWidth(), 80));
-// $pdf->SetFont('Arial', '', 12);
-$pdf->Output();
+    public function Body($ticket_infos)
+    {
+        $this->AddFont('ComforterBrush', '', 'ComforterBrush-Regular.php');
+        $this->AddFont('KaushanScript', '', 'KaushanScript-Regular.php');
+        $this->AddFont('RubikVinyl', '', 'RubikVinyl-Regular.php');
+        $this->AddFont('DotGothic16', '', 'DotGothic16-Regular.php');
+        $this->AddFont('Roboto', '', 'RobotoMono-VariableFont_wght.php');
+
+        $this->Image("./public/images/matchTicket.png", 0, 0, $this->GetPageWidth(), $this->GetPageHeight());
+
+        $this->Image("./public/images/png.png", 0, 0, $this->GetPageWidth(), $this->GetPageHeight());
+        $this->Image("./public/images/pngegg (3).png", 140, 0, 20, 30);
+
+        $this->Image("./public/images/gg.png", 2, 2, 20, 15);
+        $this->SetY(8);
+        // $this->Image("./public/images/bal.png", -6, 20, 20, 20);
+        $this->Image("./public/images/playerTT.png", 157, 15, 70, 70);
+
+        $this->SetFont('ComforterBrush', '', 35);
+
+        $this->SetXY(10, 10);
+        $this->Cell(0, 8, 'Exciting moments', 0, 1, 'C');
+        $this->SetFont('RubikVinyl', '', 35);
+
+        $this->Cell(0, 8, 'Await  you', 0, 1, 'C');
+
+        // $this->SetFont('Arial', 'B', 10);
+
+        $this->SetFont('DotGothic16', '', 15);
+        $this->SetXY(86, 35);
+        $this->SetTextColor(246, 223, 19); // Couleur orange
+        $this->SetFont('DotGothic16', '', 15);
+        $this->SetXY(86, 35);
+        $this->LetterSpacing('TICKET', 2);
+
+        $this->SetTextColor(255, 255, 255);
+        $this->SetFont('Roboto', '', 13);
+
+        $this->ln(12);
+
+        $this->cell(30, 18, '', 0, 0);
+        $this->SetXY(60, 40);
+        $vs = $ticket_infos['matche']['team1']['name'] . " VS " . $ticket_infos['matche']['team2']['name'];
+        $this->Cell(30, 10, $vs , 0, 1, 'G');
+        $this->SetXY(80, 47);
+        $this->Cell(50, 10, $ticket_infos['matche']['date'], 0, 1, 'G');
+
+        $this->Cell(40, 10, '', 0, 0, 'G');
+        $this->SetXY(60, 56);
+        $this->Cell(50, 10, $ticket_infos['matche']['stadium']['name'], 0, 1, 'G');
+
+        $this->Cell(40, 10, '', 0, 0, 'G');
+        $this->Cell(80, 10, "Ticket Number: " . $ticket_infos['number'], 0, 0, 'G');
+        $this->Cell(30, 10, "Price : " . $ticket_infos['matche']['price'] . "$", 0, 1, 'G');
+
+        // Generate QR code
+
+        $lien = 'https://www.243tech.com';
+        $qrCodeImagePath = 'image-qrcode.png';
+        \QRcode::png($lien, $qrCodeImagePath);
+
+        // Add QR code image to the PDF
+        $this->Image($qrCodeImagePath, 6, 55, 20, 20); // Adjust coordinates and size as needed
+    }
+}

@@ -23,7 +23,7 @@ class Stadium extends Model
     }
 
     public static function select($id = null){
-        return parent::selectRecords("stadiums" , '*', $id);
+        return parent::selectRecords("stadiums" , '*', "id = $id");
     }
 
     public static function delete($id){

@@ -5,12 +5,12 @@ namespace app\Models;
 class Ticket extends Model
 {
     private $user_id;
-    private $match_id;
+    private $matche_id;
 
-    public function __construct($user_id,$match_id )
+    public function __construct($user_id, $matche_id)
     {
         $this->user_id = $user_id;
-        $this->match_id = $match_id;
+        $this->matche_id = $matche_id;
     
     }
 
@@ -23,8 +23,8 @@ class Ticket extends Model
 
     public static function getTicketsNumber($matche_id)
     {
-        $res = Model::selectRecords('tickets', '*', "id = $matche_id");
-        return count($res[0]);
+        $res = parent::selectRecords('tickets', '*', "matche_id = $matche_id");
+        return count($res);
     }
 
 

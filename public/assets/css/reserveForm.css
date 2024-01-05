@@ -164,4 +164,21 @@ box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) !important;
   }
 
  /* card */
- 
+ /* FAQ */
+ .title {
+    color: #ffffff;
+    background-color: none;
+    font-size: 7px;
+    text-align: left;
+    transition: all 0.5s ease;
+}
+
+.faq {
+    background: none;
+    border-radius: 10px;
+}
+
+.title:hover {
+    color: #94D82D;
+    text-decoration: none;
+}
